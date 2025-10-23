@@ -47,7 +47,7 @@ SciViews::R()
 
 ```{r import}
 # Lecture des données
-Dragonfish_dimorph <- read.csv("data_temp/eye_PO_data.csv")
+Dragonfish_dimorph <- read.csv("data/cache/data_temp/eye_PO_data.csv")
 # Tableau des premières et dernières lignes
 tabularise$headtail(Dragonfish_dimorph )
 skimr::skim(Dragonfish_dimorph )
