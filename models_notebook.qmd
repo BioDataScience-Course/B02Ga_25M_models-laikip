@@ -47,7 +47,7 @@ SciViews::R()
 
 ```{r import}
 # Lecture des données
-Panda_climat <- read("data_temp 2/Data.xlsx", sheet = 2)
+Lizard <- read("data/Juveniles.csv")
 # Tableau des premières et dernières lignes
 tabularise$headtail(Panda_climat)
 skimr::skim(Panda_climat )
