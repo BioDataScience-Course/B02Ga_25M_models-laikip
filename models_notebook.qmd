@@ -47,10 +47,10 @@ SciViews::R()
 
 ```{r import}
 # Lecture des données
-spiders_biolum <- read.csv("Data_Fu_et_al/Spider_firefly_data_for_analyses_2024.csv")
+Dragonfish_dimorph <- read.csv("data_temp/eye_PO_data.csv")
 # Tableau des premières et dernières lignes
-tabularise$headtail(spiders_biolum)
-skimr::skim(spiders_biolum)
+tabularise$headtail(Dragonfish_dimorph )
+skimr::skim(Dragonfish_dimorph )
 ```
 
 ### Description des données
