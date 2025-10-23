@@ -1,6 +1,6 @@
 ---
 title: "___"
-author: "___, ___, ___, ___"
+author: "Maëra Minique, Arthur Baurain, Quentin Dewulf, Rohan Boulaki"
 format:
   html:
     code-fold: true
