@@ -47,10 +47,10 @@ SciViews::R()
 
 ```{r import}
 # Lecture des données
-Dragonfish_dimorph <- read.csv("data/cache/data_temp/eye_PO_data.csv")
+Panda_climat <- read("data_temp 2/Data.xlsx", sheet = 2)
 # Tableau des premières et dernières lignes
-tabularise$headtail(Dragonfish_dimorph )
-skimr::skim(Dragonfish_dimorph )
+tabularise$headtail(Panda_climat)
+skimr::skim(Panda_climat )
 ```
 
 ### Description des données
