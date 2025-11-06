@@ -103,6 +103,9 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 <!--% Graphique et interprétation de l'étudiant #3 ci-dessous. -->
 
 ```{r chart3}
+#otters_tool_clean <- otters_tool_num |> tidyr::drop_na()
+#correlation(otters_tool_clean) |> tabularise()
+#plot(otters_tool_clean)
 
 ```
 
@@ -177,3 +180,4 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 ## Références
 
 <!--% N'indiquez rien ci-dessous. Quarto se chargera de rajouter vos références bibliographiques automatiquement. -->
+
