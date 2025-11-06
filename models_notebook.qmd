@@ -52,6 +52,15 @@ dat -> otters_tool
 # Tableau des premières et dernières lignes
 tabularise$headtail(otters_tool)
 skimr::skim(otters_tool)
+naniar::vis_miss(otters_tool)
+```
+
+### Remaniements de données
+
+```{r remaniement}
+otters_tool$area <- as.factor(otters_tool$area)
+otters_tool$prey <- as.factor(otters_tool$prey)
+otters_tool$tooth_dam <- as.ordered(otters_tool$tooth_dam)
 ```
 
 ### Description des données
