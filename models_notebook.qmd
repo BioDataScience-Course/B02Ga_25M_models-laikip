@@ -218,4 +218,3 @@ rgl::rglwidget(width = 800, height = 800)
 ## Références
 
 <!--% N'indiquez rien ci-dessous. Quarto se chargera de rajouter vos références bibliographiques automatiquement. -->
-
