@@ -95,6 +95,7 @@ skimr::skim(otters_tool)
 #### Régression linéaire 1
 
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
+
 ```{r regression1}
 
 ```
@@ -102,6 +103,7 @@ skimr::skim(otters_tool)
 #### Régression linéaire 2
 
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
+
 ```{r regression2}
 
 ```
@@ -109,6 +111,7 @@ skimr::skim(otters_tool)
 #### Modèle linéaire 1
 
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
+
 ```{r modele1}
 
 ```
@@ -116,6 +119,7 @@ skimr::skim(otters_tool)
 #### Modèle linéaire 2
 
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
+
 ```{r modele2}
 
 ```
@@ -123,6 +127,7 @@ skimr::skim(otters_tool)
 #### Modèle linéaire généralisé et/ou mixte 1
 
 <!--% Élaborez un modèle linéaire généralisé ou mixte par paire d'étudiants dans cette section. -->
+
 ```{r modele3}
 
 ```
@@ -130,9 +135,11 @@ skimr::skim(otters_tool)
 #### Modèle linéaire généralisé et/ou mixte 2
 
 <!--% Élaborez un modèle linéaire généralisé ou mixte par paire d'étudiants dans cette section. -->
+
 ```{r modele4}
 
 ```
+
 ## Conclusion
 
 <!--% Lorsque toutes les analyses sont réalisées, terminez ce bloc-notes avec 3 à 6 phrases de conclusion en rapport avec ce que vous avez observé dans vos analyses. Quels sont les modèles les plus pertinents que vous retenez ? -->
