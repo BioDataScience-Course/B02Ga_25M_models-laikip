@@ -128,6 +128,9 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 <!--% Graphique et interprétation de l'étudiant #3 ci-dessous. -->
 
 ```{r chart3}
+#otters_tool_clean <- otters_tool_num |> tidyr::drop_na()
+#correlation(otters_tool_clean) |> tabularise()
+#plot(otters_tool_clean)
 
 ```
 
@@ -150,7 +153,20 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
 
 ```{r regression1}
-otters_lm <- lm(data = otters_tool, tool_use ~ hardness)
+otters_lm1 <- lm(data = otters_tool, tool_use ~ mussel_percent + snail_percent + 0)
+# résumé du modèle
+tabularise(summary_(otters_lm1))
+#équation paramétrée
+eq_(otters_lm1)
+#graphiques des résidus
+chart$residuals(otters_lm1)
+# graphique du modèle
+library(rgl)
+knitr::knit_hooks$set(webgl = hook_webgl)
+car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
+  fit = "linear", residuals = TRUE, bg = "white", axis.scales = TRUE,
+  grid = TRUE, ellipsoid = FALSE)
+rgl::rglwidget(width = 800, height = 800)
 ```
 
 #### Régression linéaire 2
