@@ -166,7 +166,8 @@ otters_lm <- lm(data = otters_tool, tool_use ~ hardness)
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
 
 ```{r modele1}
-
+otters_lm3 <- lm(data = otters_tool, mass ~ length * dietT, subset = length >= 80)
+summary(otters_lm3) |> tabularise()
 ```
 
 #### Modèle linéaire 2
