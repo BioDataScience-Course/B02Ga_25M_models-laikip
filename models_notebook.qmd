@@ -114,9 +114,12 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
     x = "Longueur du corps de la loutre [cm]",
     y = "Masse du corps de la loutre [kg]"
   ) +
-  theme(
+  theme_bw() +
+  theme( 
+    panel.background = element_rect(fill = "aliceblue"),
     axis.title.x = element_text(color = "darkred", size = 14, face = "bold"),
-    axis.title.y = element_text(color = "darkblue", size = 14, face = "bold"))
+    axis.title.y = element_text(color = "darkblue", size = 14, face = "bold")
+  ) 
 
 ```
 
@@ -125,6 +128,9 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 <!--% Graphique et interprétation de l'étudiant #3 ci-dessous. -->
 
 ```{r chart3}
+#otters_tool_clean <- otters_tool_num |> tidyr::drop_na()
+#correlation(otters_tool_clean) |> tabularise()
+#plot(otters_tool_clean)
 
 ```
 
@@ -152,8 +158,23 @@ otters_tool%>.%
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
 
 ```{r regression1}
-otters_lm <- lm(data = otters_tool, tool_use ~ hardness)
+otters_lm1 <- lm(data = otters_tool, tool_use ~ mussel_percent + snail_percent + 0)
+# résumé du modèle
+tabularise(summary_(otters_lm1))
+#équation paramétrée
+eq_(otters_lm1)
+#graphiques des résidus
+chart$residuals(otters_lm1)
+# graphique du modèle
+library(rgl)
+knitr::knit_hooks$set(webgl = hook_webgl)
+car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
+  fit = "linear", residuals = TRUE, bg = "white", axis.scales = TRUE,
+  grid = TRUE, ellipsoid = FALSE)
+rgl::rglwidget(width = 800, height = 800)
 ```
+
+...interprétation ici...
 
 #### Régression linéaire 2
 
@@ -168,7 +189,8 @@ otters_lm <- lm(data = otters_tool, tool_use ~ hardness)
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
 
 ```{r modele1}
-
+otters_lm3 <- lm(data = otters_tool, mass ~ length * dietT, subset = length >= 80)
+summary(otters_lm3) |> tabularise()
 ```
 
 #### Modèle linéaire 2
