@@ -68,10 +68,19 @@ otters_tool$tooth_dam <- as.ordered(otters_tool$tooth_dam)
 <!--% Chaque étudiant réalise et interprète un graphique pertinent en lien avec le but fixé et les modèles qui seront réalisés. Graphique et interprétation de l'étudiant #1 ci-dessous. -->
 
 ```{r chart1}
+chart(otters_tool, ~ dietT | area) +
+  geom_bar() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
 ```
 
-... interprétation #1...
+Ce graphique a pour but de déterminer les occurences des différents types de proies consommées dans chaque zone étudiée.
+
+Cela pourra potentiellement permettre par la suite d'interpréter des observations telles que le pourcentage d'utilisation d'outils dans les différentes zones, la masse ou la taille des individus de chaque zone, ...
+
+on voit ici clairement que dans certaines zones (comme ElkhornSlough) la diversité des types de proies consommées est faible tandis que dans d'autres zones (comme Monterey et BigSur) le type de proie consommée est beaucoup plus diversifié et homogène.
+
+PiedrasBlancas et SLO sont également plus généraux dans les types de proies consommées mais on observe malgré tout des préférences pour certaines espèces comme le crabe par exemple.
 
 <!--% Graphique et interprétation de l'étudiant #2 ci-dessous. -->
 
