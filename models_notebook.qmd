@@ -169,6 +169,8 @@ car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
 rgl::rglwidget(width = 800, height = 800)
 ```
 
+...interprétation ici...
+
 #### Régression linéaire 2
 
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
