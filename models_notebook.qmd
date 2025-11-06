@@ -147,7 +147,10 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
 
 ```{r regression1}
-otters_lm <- lm(data = otters_tool, tool_use ~ hardness)
+otters_lm1 <- lm(data = otters_tool, tool_use ~ mussel_percent + snail_percent + 0)
+tabularise(summary_(otters_lm1))
+eq_(otters_lm1)
+chart$residuals(otters_lm1)
 ```
 
 #### Régression linéaire 2
