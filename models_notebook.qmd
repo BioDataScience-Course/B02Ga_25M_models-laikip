@@ -151,9 +151,19 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 
 ```{r regression1}
 otters_lm1 <- lm(data = otters_tool, tool_use ~ mussel_percent + snail_percent + 0)
+# résumé du modèle
 tabularise(summary_(otters_lm1))
+#équation paramétrée
 eq_(otters_lm1)
+#graphiques des résidus
 chart$residuals(otters_lm1)
+# graphique du modèle
+library(rgl)
+knitr::knit_hooks$set(webgl = hook_webgl)
+car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
+  fit = "linear", residuals = TRUE, bg = "white", axis.scales = TRUE,
+  grid = TRUE, ellipsoid = FALSE)
+rgl::rglwidget(width = 800, height = 800)
 ```
 
 #### Régression linéaire 2
