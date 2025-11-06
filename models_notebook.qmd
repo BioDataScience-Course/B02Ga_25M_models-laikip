@@ -115,7 +115,7 @@ PiedrasBlancas et SLO sont également plus généraux dans les types de proies c
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
 
 ```{r regression1}
-
+otters_lm <- lm(data = otters_tool, tool_use ~ hardness)
 ```
 
 #### Régression linéaire 2
