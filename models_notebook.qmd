@@ -76,6 +76,16 @@ otters_tool$tooth_dam <- as.ordered(otters_tool$tooth_dam)
 <!--% Graphique et interprétation de l'étudiant #2 ci-dessous. -->
 
 ```{r chart2}
+ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
+  geom_point() +
+  stat_smooth(method = "lm")
+  labs(
+    x = "Longueur du corps de la loutre [cm]",
+    y = "Masse du corps de la loutre [kg]"
+  ) +
+  theme(
+    axis.title.x = element_text(color = "darkblue", size = 14, face = "bold"),
+    axis.title.y = element_text(color = "darkred", size = 14, face = "bold"))
 
 ```
 
