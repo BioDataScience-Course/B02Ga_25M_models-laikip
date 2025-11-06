@@ -40,17 +40,18 @@ if (!"tools:tests" %in% search())
 knitr::opts_chunk$set(dev = "ragg_png")
 
 # Configuration de l'environnement
-SciViews::R()
+SciViews::R("model", "infer")
 ```
 
 <!--% Importez les données que vous aurez préalablement nettoyées, remaniées et labélisées dans le script R nommé `R/import.R`. -->
 
 ```{r import}
 # Lecture des données
-Loutre <- load("data/cache/Data_temp/dat.Rdata")
+load("data/cache/Data_temp/dat.Rdata")
+dat -> otters_tool
 # Tableau des premières et dernières lignes
-tabularise$headtail(Loutre)
-skimr::skim(Loutre)
+tabularise$headtail(otters_tool)
+skimr::skim(otters_tool)
 ```
 
 ### Description des données
