@@ -62,12 +62,12 @@ otters_tool$area <- as.factor(otters_tool$area)
 otters_tool$prey <- as.factor(otters_tool$prey)
 otters_tool$tooth_dam <- as.ordered(otters_tool$tooth_dam)
 otters_tool <-smutate(otters_tool, total_prey = urchin_num+crab_num+mussel_num+clam_num+snail_num+abalone_num)
-otters_tool <-smutate(otters_tool, urchin_percent = urchin_num/total_prey)
-otters_tool <-smutate(otters_tool, abalone_percent = abalone_num/total_prey)
-otters_tool <-smutate(otters_tool, mussel_percent = mussel_num/total_prey)
-otters_tool <-smutate(otters_tool, clam_percent = clam_num/total_prey)
-otters_tool <-smutate(otters_tool, snail_percent = snail_num/total_prey)
-otters_tool <-smutate(otters_tool, crab_percent = crab_num/total_prey)
+otters_tool <-smutate(otters_tool, urchin_percent = urchin_num/total_prey*100)
+otters_tool <-smutate(otters_tool, abalone_percent = abalone_num/total_prey*100)
+otters_tool <-smutate(otters_tool, mussel_percent = mussel_num/total_prey*100)
+otters_tool <-smutate(otters_tool, clam_percent = clam_num/total_prey*100)
+otters_tool <-smutate(otters_tool, snail_percent = snail_num/total_prey*100)
+otters_tool <-smutate(otters_tool, crab_percent = crab_num/total_prey*100)
 otters_tool <- labelise(otters_tool,
   label=list(
   total_prey="nombre totale de proies consommées",
@@ -147,6 +147,11 @@ chart(otters_tool, ~ mass %fill=% sex) + geom_histogram(bins = 40)
 <!--% Graphique et interprétation de l'étudiant #4 ci-dessous. -->
 
 ```{r chart4}
+otters_tool%>.%
+  sfilter(.,mussel_percent<15)%>.%
+  chart(.,~ mussel_percent %col=% tooth_dam)+
+  geom_histogram()
+
 
 ```
 
@@ -162,10 +167,22 @@ chart(otters_tool, ~ mass %fill=% sex) + geom_histogram(bins = 40)
 
 ```{r regression1}
 otters_lm1 <- lm(data = otters_tool, tool_use ~ mussel_percent + snail_percent + 0)
+# résumé du modèle
 tabularise(summary_(otters_lm1))
+#équation paramétrée
 eq_(otters_lm1)
+#graphiques des résidus
 chart$residuals(otters_lm1)
+# graphique du modèle
+library(rgl)
+knitr::knit_hooks$set(webgl = hook_webgl)
+car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
+  fit = "linear", residuals = TRUE, bg = "white", axis.scales = TRUE,
+  grid = TRUE, ellipsoid = FALSE)
+rgl::rglwidget(width = 800, height = 800)
 ```
+
+...interprétation ici...
 
 #### Régression linéaire 2
 
@@ -180,7 +197,8 @@ chart$residuals(otters_lm1)
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
 
 ```{r modele1}
-
+otters_lm3 <- lm(data = otters_tool, mass ~ length * dietT, subset = length >= 80)
+summary(otters_lm3) |> tabularise()
 ```
 
 #### Modèle linéaire 2
