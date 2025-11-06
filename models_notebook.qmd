@@ -87,14 +87,14 @@ PiedrasBlancas et SLO sont également plus généraux dans les types de proies c
 ```{r chart2}
 ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
   geom_point() +
-  stat_smooth(method = "lm")
+  stat_smooth(method = "lm", formula = y ~ x) +
   labs(
     x = "Longueur du corps de la loutre [cm]",
     y = "Masse du corps de la loutre [kg]"
   ) +
   theme(
-    axis.title.x = element_text(color = "darkblue", size = 14, face = "bold"),
-    axis.title.y = element_text(color = "darkred", size = 14, face = "bold"))
+    axis.title.x = element_text(color = "darkred", size = 14, face = "bold"),
+    axis.title.y = element_text(color = "darkblue", size = 14, face = "bold"))
 
 ```
 
