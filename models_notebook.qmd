@@ -114,9 +114,12 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
     x = "Longueur du corps de la loutre [cm]",
     y = "Masse du corps de la loutre [kg]"
   ) +
-  theme(
+  theme_bw() +
+  theme( 
+    panel.background = element_rect(fill = "aliceblue"),
     axis.title.x = element_text(color = "darkred", size = 14, face = "bold"),
-    axis.title.y = element_text(color = "darkblue", size = 14, face = "bold"))
+    axis.title.y = element_text(color = "darkblue", size = 14, face = "bold")
+  ) 
 
 ```
 
