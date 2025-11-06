@@ -131,7 +131,15 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 #otters_tool_clean <- otters_tool_num |> tidyr::drop_na()
 #correlation(otters_tool_clean) |> tabularise()
 #plot(otters_tool_clean)
+chart(otters_tool, length ~ dietT %fill=% sex) + 
+  geom_boxplot()
+chart(otters_tool, length ~ area %fill=% sex) + 
+  geom_boxplot()
+chart(otters_tool, ~ length %fill=% ageclass) + geom_histogram(bins = 40)
 
+chart(otters_tool, ~ length %fill=% sex | area) + geom_histogram(bins = 30)
+
+chart(otters_tool, ~ mass %fill=% sex) + geom_histogram(bins = 40)
 ```
 
 ... interprétation #3...
@@ -208,4 +216,3 @@ chart$residuals(otters_lm1)
 ## Références
 
 <!--% N'indiquez rien ci-dessous. Quarto se chargera de rajouter vos références bibliographiques automatiquement. -->
-
