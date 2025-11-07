@@ -171,8 +171,6 @@ chart(otters_tool, lg_Epreycalc ~ lg_hardness %col=% prey) +
 
 Cette différence suggère l’existence d’un dimorphisme sexuel qui induit un comportement d’utilisation d’outils différent.
 
-\(5\) Les escargots ne sont pas les plus durs mais suscitent une utilisation très fréquente d'outils.
-
 <!--% Graphique et interprétation de l'étudiant #4 ci-dessous. -->
 
 ```{r chart4}
@@ -218,7 +216,20 @@ rgl::rglwidget(width = 800, height = 800)
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
 
 ```{r regression2}
+# Régression polynomiale
+otters_lm2 <- lm(data = otters_tool, mass ~ Epreycalc + I(Epreycalc^2) + I(Epreycalc^3) + 0)
 
+# Résumé du modèle
+summary_(otters_lm2) |> tabularise()
+
+# Équation paramétrée
+eq_(otters_lm2)
+
+# Graphique du modèle
+chart(otters_lm2)
+
+# Graphiques des résidus
+chart$residuals(otters_lm2)
 ```
 
 #### Modèle linéaire 1
@@ -235,13 +246,17 @@ summary(otters_lm3) |> tabularise()
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
 
 ```{r modele2}
-otters_lm2 <- lm(data = otters_tool, tool_use ~ hardness * prey + 0)
-# résumé du modèle
-tabularise(summary_(otters_lm2))
-#équation paramétrée
-eq_(otters_lm2)
-#graphiques des résidus
-chart$residuals(otters_lm2)
+# Modèle ANCOVA
+otters_lm4 <- lm(data = otters_tool, tool_use ~ hardness * prey + 0)
+
+# Résumé du modèle
+summary_(otters_lm4) |> tabularise()
+
+# Équation paramétrée
+eq_(otters_lm4)
+
+# Graphiques des résidus
+chart$residuals(otters_lm4)
 ```
 
 #### Modèle linéaire généralisé et/ou mixte 1
