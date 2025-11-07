@@ -218,13 +218,7 @@ rgl::rglwidget(width = 800, height = 800)
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
 
 ```{r regression2}
-otters_lm2 <- lm(data = otters_tool, tool_use ~ hardness * prey + 0)
-# résumé du modèle
-tabularise(summary_(otters_lm2))
-#équation paramétrée
-eq_(otters_lm2)
-#graphiques des résidus
-chart$residuals(otters_lm2)
+
 ```
 
 #### Modèle linéaire 1
@@ -241,7 +235,13 @@ summary(otters_lm3) |> tabularise()
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
 
 ```{r modele2}
-
+otters_lm2 <- lm(data = otters_tool, tool_use ~ hardness * prey + 0)
+# résumé du modèle
+tabularise(summary_(otters_lm2))
+#équation paramétrée
+eq_(otters_lm2)
+#graphiques des résidus
+chart$residuals(otters_lm2)
 ```
 
 #### Modèle linéaire généralisé et/ou mixte 1
