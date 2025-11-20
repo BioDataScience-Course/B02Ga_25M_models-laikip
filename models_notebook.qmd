@@ -21,7 +21,9 @@ bibliography: references.bib
 
 <!--% Rédigez une courte introduction de 3 ou 5 phrases qui présente vos données. Ajoutez une phrase de but (que vous remanierez éventuellement en fonction des modèles que vous ajouterez plus tard). Vous pouvez citer la bibliographie en utilisant le formatage Markdown ad hoc et en incluant votre référence au format bibtex dans le fichier references.bib. -->
 
-... Introduction et but...
+L'étude réalisée par Chris Law et al. publiée le 5 avril 2024 est analysée dans cette recherche. Les auteurs y mènent une étude sur environ 196 loutres de mer du sud (*Enhydra lutris* (L., 1758)) équipées d'émetteurs radio.
+
+Selon les auteurs, l'utilisation d'outils apporte un avantage dans le maintient de la santé dentaire ainsi que dans l'atténuation du compromis entre l'accès aux proies, la santé dentaire et l'aport calorique. De plus, cette technique donne accès à des proies plus dures et plus grandes. Ce qui est essentiel dans des lieux où les proies sont rares [@law2024].
 
 ## Matériel et méthodes
 
