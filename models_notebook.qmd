@@ -174,15 +174,18 @@ Cette différence suggère l’existence d’un dimorphisme sexuel qui induit un
 <!--% Graphique et interprétation de l'étudiant #4 ci-dessous. -->
 
 ```{r chart4}
-otters_tool%>.%
-  sfilter(.,mussel_percent<15)%>.%
-  chart(.,~ mussel_percent %col=% tooth_dam)+
-  geom_histogram()
-
-
+chart(data = otters_tool, lg_Tool ~ ageclass %fill=% sex)+
+  geom_boxplot()+
+  stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
 ```
 
 ... interprétation #4...
+
+Nous constatons que l'usage d'outils augmente avec l'âge.
+
+Les femelles ont plus tendance à utiliser des outils que les mâles.
+
+Nous constatons quelques valeurs extrêmes.
 
 ### Modélisation
 
@@ -217,7 +220,7 @@ rgl::rglwidget(width = 800, height = 800)
 
 ```{r regression2}
 # Régression polynomiale
-otters_lm2 <- lm(data = otters_tool, mass ~ Epreycalc + I(Epreycalc^2) + I(Epreycalc^3) + 0)
+otters_lm2 <- lm(data = otters_tool, Epreycalc ~hardness +tooth_dam + 0)
 
 # Résumé du modèle
 summary_(otters_lm2) |> tabularise()
