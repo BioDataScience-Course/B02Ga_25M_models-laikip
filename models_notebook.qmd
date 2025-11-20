@@ -277,8 +277,7 @@ chart$residuals(otters_lm4)
 
 ```{r modele3}
 # Modèle GLM
-otters_glm1 <- glm(data = otters_tool, ageclass ~ tool_use * prey, family = binomial)
-
+otters_glm1 <- glm(data = otters_tool, urchin_num ~ tool_use * ageclass * length, family = poisson)
 # Résumé du modèle
 summary(otters_glm1) |> tabularise()
 
