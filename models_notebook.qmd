@@ -239,9 +239,6 @@ summary_(otters_lm2) |> tabularise()
 # Équation paramétrée
 eq_(otters_lm2)
 
-# Graphique du modèle
-chart(otters_lm2) + geom_point()
-
 # Graphiques des résidus
 chart$residuals(otters_lm2)
 ```
