@@ -187,7 +187,27 @@ car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
 rgl::rglwidget(width = 800, height = 800)
 ```
 
-...interprétation ici...
+on voit ici que notre modèle linéaire est globalement significatif au seuil alpha de 5%. De plus, l'effet du poucentage de moules consommées ainsi que celui des escargots consommés sont significativement différents de 0 au seuil alpha de 5%. R^2^ ajusté est plutôt correct avec une valeur de 0.8551.
+
+Concernant l'analyse des résidus :
+
+-   L'étendue des résidus est égale à celle des valeurs prédites (A)
+
+-   La linéarité est respectée avec un léger décalge sur le centre des valeurs prédites peut-être dû à un manque d'observations sur cette partie du graphique par rapport aux extrémités (A).
+
+-   Les rédidus ont une distribution qui ne diffère pas trop de la normale avec malgré tout une asymétrie sur les valeurs faibles et fortes (B).
+
+-   Une hétéroscédasticité est possible, on observe des valeurs resserrées à gauche, des valeurs intermédiaires plutôt dispersées et des valeurs qui se resserrent à nouveau sur la droite du graphique (C).
+
+-   On observe plusieurs valeurs possédant une distance cook importante ainsi qu'un effet levier important. Certaines valeurs possèdent juste une distance de cook importante et d'autre ne possèdent qu'un effet levier important (D).
+
+    Sur le graphique, on peut observer que la distribution des observations n'est pas homogène. Beaucoup sont situées sur la gauche du graphique et sur la droite mais le centre de celui-ci est moins fourni en observation.
+
+    De plus, on observe que lorsque la fréquence d'utilisation d'outils augmente, le pourcentage de moules consommées est assez faible comparé au pourcentage d'escargot consommés qui lui, est clairement élevé pour une utilisation d'outils fréquente.
+
+    On pourrait émettre l'hypothèse via ce graphique que les Loutres utilisent plus d'outils pour manger des escargots que pour manger des moules.
+
+    Attention que notre modèle se base sur peu de données intermédiaires, c'est malheureusement le problème d'une expérience dans un milieu naturel. Il faut donc rester méfiant et objectif sur ce modèle.
 
 #### Régression linéaire 2
 
