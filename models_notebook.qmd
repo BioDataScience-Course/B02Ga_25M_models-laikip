@@ -278,7 +278,14 @@ chart$residuals(otters_lm4)
 <!--% Élaborez un modèle linéaire généralisé ou mixte par paire d'étudiants dans cette section. -->
 
 ```{r modele3}
+# Modèle GLM
+otters_glm1 <- glm(data = otters_tool, ageclass ~ tool_use * prey, family = binomial)
 
+# Résumé du modèle
+summary(otters_glm1) |> tabularise()
+
+# Graphique des résidus
+chart$residuals(otters_glm1)
 ```
 
 #### Modèle linéaire généralisé et/ou mixte 2
