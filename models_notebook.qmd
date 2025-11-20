@@ -145,11 +145,19 @@ give_n <- function(x)
 chart(otters_tool, lg_Tool ~ prey %fill=% prey) + geom_boxplot() + 
   stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
 
+
+chart(otters_tool, tool_use ~ prey %fill=% prey) + geom_boxplot() + 
+  stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
+
 ```
 
-\(1\) Les résultats montrent que les femelles utilisent les outils plus fréquemment que les mâles.
+Ce graphique illustre la fréquence d’utilisation d’outils par les loutres en fonction de leur type de proie préféré.
 
-Cette différence suggère l’existence d’un dimorphisme sexuel qui induit un comportement d’utilisation d’outils différent.
+On observe clairement une utilisation marquée des outils lorsque la proie principale est l’escargot, qui se distingue nettement des autres catégories. En revanche, les loutres recourent rarement aux outils pour accéder aux ormeaux, palourdes, crabes, moules, et encore moins aux oursins.
+
+On peut expliquer cette différence par la facilité à ouvrir ces espèces, contrairement à l'escargot qui nécessite une effort spécifique.
+
+Le facteur « autre » n’a pas été interprété ici, car il ne comporte que deux observations, ce qui ne permet pas d’en tirer des conclusions fiables.
 
 <!--% Graphique et interprétation de l'étudiant #4 ci-dessous. -->
 
