@@ -1,6 +1,6 @@
 ---
 title: "___"
-author: "___, ___, ___, ___"
+author: "Maëra Minique, Arthur Baurain, Quentin Dewulf, Rohan Boulaki"
 format:
   pdf:
     documentclass: report
@@ -16,9 +16,15 @@ bibliography: references.bib
 
 <!--% Rédigez l'introduction de ce rapport en 5-6 phrases.-->
 
-## But
+Dans cette étude, le jeu de données fournit par Chris Law et al. dans leurs recherches publiées le 5 avril 2024 sur Dryad sera analysé. Les auteurs ont mené une étude sur environ 196 loutres de mer du sud (*Enhydra lutris* (L., 1758)) qui ont été équipées d'émetteurs radio.
+
+*Enhydra lutris* (L., 1758) est un mammifère marin protégé depuis plusieurs décennies suite à son utilisation fréquente pour sa fourrure. Cette espèce contient trois sous-espèces : E.l. lutris, E.l. kenyoni, E.l. nereis. Ces sous-espèces sont principalement situées rspectivement en Russie et au Japon, en Alaska et au Canada et enfin, en Californie [@2011doroff].
+
+Cette étude montre que l'utilisation d'outils par les loutres permet un accès plus efficace aux proies plus dures et plus grandes. De plus, les auteurs avancent qu'un avantage mécanique est apporté par l'utilisation de ces outils. En effet, les outils remplacent les dents dans ce genre de manipulation de proies et par conséquent permettent un dommage dentaire moindre. Cela permet aussi d'atténuer le compromis entre l'accès aux proies, la santé dentaire et l'aport calorique. Les auteurs ont conclu que l'utilisation d'outils apporte un avantage dans la satisfaction des besoins caloriques en transformant des proies initialement inaccessibles. Ce comportement est essentiel dans les endroits où les proies deviennent rares [@law2024] .
 
 <!--% Rédigez le but de ce rapport en 2 phrases.-->
+
+Il est nécessaire d'apporter des preuves supplémentaires à cette étude afin de confirmer les différents résultats et les différentes conclusions qui ont été fournies.
 
 ## Matériel et méthodes
 
