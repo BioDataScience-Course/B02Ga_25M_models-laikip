@@ -231,7 +231,7 @@ Concernant l'analyse des résidus :
 ```{r regression2}
 # Régression polynomiale
 
-otters_lm2 <- lm(data = otters_tool, Epreycalc ~ tooth_dam + hardness + 0)
+otters_lm2 <- lm(data = otters_tool,hardness ~ tool_use )
 
 # Résumé du modèle
 summary_(otters_lm2) |> tabularise()
@@ -240,7 +240,6 @@ summary_(otters_lm2) |> tabularise()
 eq_(otters_lm2)
 
 # Graphique du modèle
-chart(otters_lm2) + geom_point()
 
 # Graphiques des résidus
 chart$residuals(otters_lm2)
