@@ -138,33 +138,11 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 give_n <- function(x)
   c(y = max(x) * 1.1, label = length(x)) 
 
-#1 Utilisation d'outils par sexe
-chart(otters_tool, lg_Tool ~ sex %fill=% sex) + geom_boxplot() + 
-  stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
-
-#2 Utilisation d'outils par zone et sexe
-chart(otters_tool, lg_Tool ~ area %fill=% sex) + geom_boxplot() 
-
 #3 Utilisation d'outils par rapport aux proies consommées/régime alimentaire
-chart(otters_tool, tool_use ~ prey %fill=% prey) + geom_boxplot() + 
-  stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
 
 chart(otters_tool, lg_Tool ~ prey %fill=% prey) + geom_boxplot() + 
   stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
 
-#4 Les proies les plus dures
-chart(otters_tool, hardness ~ dietT %fill=% dietT) + geom_boxplot()
-
-#5 Fréquence d'utilisation d'outils 
-chart(otters_tool, tool_use ~ hardness %col=% dietT) + geom_point() + geom_smooth(method = "lm")
-
-#6 Les proies dures contiennent plus de calories ?
-otters_tool$lg_Epreycalc <- log(otters_tool$Epreycalc)
-otters_tool$lg_hardness <- log(otters_tool$hardness)
-
-chart(otters_tool, lg_Epreycalc ~ lg_hardness %col=% prey) +
-  geom_point() +
-  stat_smooth(method = "lm", formula = y ~ x)
 ```
 
 \(1\) Les résultats montrent que les femelles utilisent les outils plus fréquemment que les mâles.
