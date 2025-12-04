@@ -31,7 +31,7 @@ Il est nécessaire d'apporter des preuves supplémentaires à cette étude afin 
 
 <!--% Indiquez ici d'où viennent les données et aussi quel logiciel (et version) vous utilisez pour les analyses. Inspirez-vous des projets du premier module de SDD II. -->
 
-...Matériel et méthodes...
+Les données utilisées sont les mêmes mesures réalisées sur *Enhydra lutris* (L., 1758)) de la publication , @law2024. Les analyses sont réalisées dans `r R.version.string` et plus précisément en utilisant la [SciViews Box 2025](https://www.sciviews.org/svbox/) dans [Saturn Cloud](https://saturncloud.io).
 
 ## Analyses
 

@@ -121,3 +121,4 @@ otters_tool <- labelise(otters_tool,
 # Etape 5 : Sauvegarde locale des données retravaillées -------------------
 
 write$rds(otters_tool, file = "data/otters_tool.rds")
+
