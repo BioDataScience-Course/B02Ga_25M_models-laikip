@@ -31,7 +31,7 @@ Il est nécessaire d'apporter des preuves supplémentaires à cette étude afin 
 
 <!--% Indiquez ici d'où viennent les données et aussi quel logiciel (et version) vous utilisez pour les analyses. Inspirez-vous des projets du premier module de SDD II. -->
 
-...Matériel et méthodes...
+Les données utilisées sont les mêmes mesures réalisées sur *Enhydra lutris* (L., 1758)) de la publication , @law2024. Les analyses sont réalisées dans `r R.version.string` et plus précisément en utilisant la [SciViews Box 2025](https://www.sciviews.org/svbox/) dans [Saturn Cloud](https://saturncloud.io).
 
 ## Analyses
 
@@ -51,43 +51,10 @@ SciViews::R("model", "infer")
 
 ```{r import}
 # Lecture des données
-load("data/cache/Data_temp/dat.Rdata")
-dat -> otters_tool
-source("R/import.R") #Exécute les remaniements de données fait dans import.R
-# Tableau des premières et dernières lignes
+otters_tool <- read("data/otters_tool.rds")
 tabularise$headtail(otters_tool)
 skimr::skim(otters_tool)
 naniar::vis_miss(otters_tool)
-```
-
-### Remaniements de données
-
-```{r remaniement}
-otters_tool$area <- as.factor(otters_tool$area)
-otters_tool$prey <- as.factor(otters_tool$prey)
-otters_tool$tooth_dam <- as.ordered(otters_tool$tooth_dam)
-otters_tool <-smutate(otters_tool, total_prey = urchin_num+crab_num+mussel_num+clam_num+snail_num+abalone_num)
-otters_tool <-smutate(otters_tool, urchin_percent = urchin_num/total_prey*100)
-otters_tool <-smutate(otters_tool, abalone_percent = abalone_num/total_prey*100)
-otters_tool <-smutate(otters_tool, mussel_percent = mussel_num/total_prey*100)
-otters_tool <-smutate(otters_tool, clam_percent = clam_num/total_prey*100)
-otters_tool <-smutate(otters_tool, snail_percent = snail_num/total_prey*100)
-otters_tool <-smutate(otters_tool, crab_percent = crab_num/total_prey*100)
-otters_tool <- labelise(otters_tool,
-  label=list(
-  total_prey="nombre totale de proies consommées",
-  urchin_percent="pourcentage d'oursins consommés",
-  abalone_percent="pourcentage d'ormeaux consomés",
-  mussel_percent="pourcentage de moules consomées",
-  clam_percent="pourcentage de palourdes consomées",
-  snail_percent="pourcentage d'escargots consomés"),
-units=list(
-  total_prey=NA,
-  urchin_percent="%",
-  abalone_percent="%",
-  mussel_percent="%",
-  clam_percent="%",
-  snail_percent="%"))
 ```
 
 ### Description des données
@@ -229,9 +196,8 @@ Concernant l'analyse des résidus :
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
 
 ```{r regression2}
-# Régression polynomiale
 
-otters_lm2 <- lm(data = otters_tool,hardness ~ tool_use )
+otters_lm2 <- lm(data = otters_tool, tool_use ~ hardness + mass)
 
 # Résumé du modèle
 summary_(otters_lm2) |> tabularise()

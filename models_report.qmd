@@ -30,6 +30,8 @@ Il est nécessaire d'apporter des preuves supplémentaires à cette étude afin 
 
 <!--% Cette section doit comprendre deux parties. La première partie doit expliciter les données employées et la seconde traiter des analyses réalisées et des logiciels employés.-->
 
+Les données utilisées pour cette analyse sont celles retrouvées dans l'étude de
+
 ## Résultats
 
 <!--% Présentez les deux modèles les plus pertinents que vous avez sélectionnés. Structurez la section en deux parties avec deux titres de niveau trois.-->
