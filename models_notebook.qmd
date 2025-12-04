@@ -217,6 +217,18 @@ La dureté moyenne de la proie, la fréquence d'utilisation d'outils et l'âge s
 
 Concernant l'analyse des résidus :
 
+-   La linéarité est globalement respectée, la courbe de tendance reste proche de l'axe horizontal zéro, bien qu'on observe quelques valeurs prédites élevées (A).
+
+-   Les résidus ont une distribution qui ne diffère pas trop de la normale avec une asymétrie sur les valeurs faibles et fortes (B).
+
+-   Une hétéroscédasticité est probable. On observe que la majorité des données se situent sur la gauche et quelques valeurs dispersées sur la droite du graphique (C).
+
+-   On observe quelques valeurs possédant un effet levier important. Cependant, ces points n'ont pas une distance de Cook importante (D).
+
+Sur ce graphique, on peut observer également que la distribution des observations n'est pas homogène. Une grande concentration de données se trouve sur la gauche sur l'axe des valeurs prédites, alors que les données à droite sont beaucoup plus rares et dispersées.
+
+De plus, l'élargissement du nuage de points au centre des graphiques (A et C) suggère que le modèle a plus de mal à prédire avec précision les valeurs moyennes que les valeurs faibles.
+
 #### Modèle linéaire 1
 
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
