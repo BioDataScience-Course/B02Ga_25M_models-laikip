@@ -1,19 +1,15 @@
-# Importation et remaniement des données
-if (!"tools:tests" %in% search())
-  source(here::here("tests/tools_tests.R"), attach(NULL, name = "tools:tests"))
+# Etape 1 : Importation des données brutes --------------------------------
 
-# Configure Knitr to use AGG as graphic device
-knitr::opts_chunk$set(dev = "ragg_png")
-
-# Configuration de l'environnement
-SciViews::R("model", "infer")
+load("data/cache/Data_temp/dat.Rdata")
+dat -> otters_tool
+rm(dat)
 
 # Remaniement des données
 
 otters_tool$area <- as.factor(otters_tool$area)
 otters_tool$prey <- as.factor(otters_tool$prey)
 otters_tool$tooth_dam <- as.ordered(otters_tool$tooth_dam)
-otters_tool <- smutate(otters_tool, total_prey = urchin_num+crab_num+mussel_num+clam_num+snail_num+abalone_num)
+otters_tool <- smutate(otters_tool, total_prey = urchin_num + crab_num + mussel_num + clam_num + snail_num + abalone_num)
 otters_tool <- smutate(otters_tool, urchin_percent = urchin_num/total_prey*100)
 otters_tool <- smutate(otters_tool, abalone_percent = abalone_num/total_prey*100)
 otters_tool <- smutate(otters_tool, mussel_percent = mussel_num/total_prey*100)
@@ -21,11 +17,6 @@ otters_tool <- smutate(otters_tool, clam_percent = clam_num/total_prey*100)
 otters_tool <- smutate(otters_tool, snail_percent = snail_num/total_prey*100)
 otters_tool <- smutate(otters_tool, crab_percent = crab_num/total_prey*100)
 
-# Etape 1 : Importation des données brutes --------------------------------
-
-load("data/cache/Data_temp/dat.Rdata")
-dat -> otters_tool
-rm(dat)
 
 # Etape 2 : Description brève des données ---------------------------------
 
@@ -36,6 +27,7 @@ rm(dat)
 
 
 # Etape 4 : Ajout des labels et des unités --------------------------------
+
 otters_tool <- labelise(otters_tool,
   label = list(
     otter = "Loutre",
