@@ -236,7 +236,20 @@ De plus, l'élargissement du nuage de points au centre des graphiques (A et C) s
 ```{r modele1}
 otters_lm3 <- lm(data = otters_tool, mass ~ length * dietT, subset = length >= 80)
 summary(otters_lm3) |> tabularise()
+
+chart$residuals(otters_lm3)
+
+otters_lm3bis <- lm(data = otters_tool, mass ~ length + dietT, subset = length >= 80)
+anova(otters_lm3, otters_lm3bis) |> tabularise()
 ```
+
+-   Nous vérifions dans un premier temps que la variable réponse soit bien une numérique et que la distribution soit bien (globalement) normale.
+
+-   On teste ensuite notre modèle avec interactions ; on voit que de multiples paramètres apparaissent significativement différent de 0 au seuil alpha de 5% via les test t de Student.
+
+-   On teste tout de même le modèle sans interactions, on voit que la valeur de R carré est très proche.
+
+-   On réalise une anova de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle, on voit que les deux modèles sont significativement différent l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3).
 
 #### Modèle linéaire 2
 
@@ -262,13 +275,20 @@ chart$residuals(otters_lm4)
 
 ```{r modele3}
 # Modèle GLM
-otters_glm1 <- glm(data = otters_tool, urchin_num ~ tool_use * ageclass * length, family = poisson)
-# Résumé du modèle
+otters_glm1 <- glm(data = otters_tool, urchin_num ~ tool_use + length + ageclass, family = quasipoisson)
 summary(otters_glm1) |> tabularise()
 
 # Graphique des résidus
 chart$residuals(otters_glm1)
 ```
+
+-   Nous avons testé différentes formes de GLM, nous nous assurons ici de la non-normalité de la distribution dans le cas de la variable réponse "urchin_num" (quantité d'oursin consommés).
+
+-   Nous choisissons initialement une famille de type "poisson" car la situation correspond à un dénombrement, une abondance. En regardant la dispersion observée (déviance résiduelle/degrés de libertés des résidus) on se rend compte qu'on est dans une situation de surdispersion, on opte alors pour un quasipoisson : on observe que le paramètre de dispersion ne change pas même si la surdispersion est moins marquée mais que les valeurs p des test Z ont diminué indiquant que les paramètres ont des valeurs qui sont d'avantage significativement différente de 0 au seuil alpha de 5%.
+
+-   Les modèles GLM de famille quasi étant moins robuste, cette augmentation de la significativité peut n'être que dû à cette diminution de robustesse donc le modèle ne semble pas plus pertinent.
+
+-   Étoffer le jeu de données pourrait être une piste d'avancement, peut-être cela permettrait-il d'avoir de meilleurs modèles GLM.
 
 #### Modèle linéaire généralisé et/ou mixte 2
 
