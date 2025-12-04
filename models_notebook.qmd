@@ -209,6 +209,14 @@ chart$residuals(otters_lm4)
 
 ```
 
+Notre second modèle est significatif au seuil alpha de 5%.
+
+Notre R² ajusté est moyen et explique 43 % de la variabilité de l'apport calorifique.
+
+La dureté moyenne de la proie, la fréquence d'utilisation d'outils et l'âge sont tous significatifs au seuil alpha de 5%. Ceci explique significativement que les proies sont associées à un apport calorifique plus élevé. La fréquence d’utilisation d’outils influence également significativement l’apport calorifique. L’effet significatif de l’âge suggère un possible effet d’expérience ou d’apprentissage.
+
+Concernant l'analyse des résidus :
+
 #### Modèle linéaire 1
 
 <!--% Construisez un modèle linéaire par paire d'étudiants dans cette section. -->
