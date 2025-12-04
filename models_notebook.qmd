@@ -100,22 +100,11 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 <!--% Graphique et interprétation de l'étudiant #3 ci-dessous. -->
 
 ```{r chart3}
-# Matrice de corrélation :
-  # otters_tool_clean <- otters_tool_num |> tidyr::drop_na()
-  # correlation(otters_tool_clean) |> tabularise()
-  # plot(otters_tool_clean)
 
-# Fonction give_n pour les boxplots
 give_n <- function(x)
   c(y = max(x) * 1.1, label = length(x)) 
 
-#3 Utilisation d'outils par rapport aux proies consommées/régime alimentaire
-
 chart(otters_tool, lg_Tool ~ prey %fill=% prey) + geom_boxplot() + 
-  stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
-
-
-chart(otters_tool, tool_use ~ prey %fill=% prey) + geom_boxplot() + 
   stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
 
 ```
