@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Importation et remaniement des données
 if (!"tools:tests" %in% search())
   source(here::here("tests/tools_tests.R"), attach(NULL, name = "tools:tests"))
@@ -30,8 +30,6 @@ otters_tool <-smutate(otters_tool, clam_percent = clam_num/total_prey*100)
 otters_tool <-smutate(otters_tool, snail_percent = snail_num/total_prey*100)
 otters_tool <-smutate(otters_tool, crab_percent = crab_num/total_prey*100)
 
-=======
->>>>>>> 701e09ecfbf95c978e6ac1553213cc3132f26235
 # Etape 1 : Importation des données brutes --------------------------------
 
 load("data/cache/Data_temp/dat.Rdata")
