@@ -1,5 +1,5 @@
 ---
-title: "___"
+title: "Analyse des avantages de l'utilisation d'outils chez Enhydra lutris (L., 1758)"
 author: "Maëra Minique, Arthur Baurain, Quentin Dewulf, Rohan Boulaki"
 format:
   pdf:
@@ -29,6 +29,12 @@ Il est nécessaire d'apporter des preuves supplémentaires à cette étude afin 
 ## Matériel et méthodes
 
 <!--% Cette section doit comprendre deux parties. La première partie doit expliciter les données employées et la seconde traiter des analyses réalisées et des logiciels employés.-->
+
+Les données utilisées pour cette analyse sont celles retrouvées dans l'étude de ... concernant *Enhydra lutris* (L., 1758).
+
+Dans cette étude, l'impact de l'utilisation d'outils par cette espèce sera analysé par rapport à plusieurs variables. Différentes techniques d'analyses comme des modèles linéaires généralisés ou non, des régressions linéraires ainsi que quelques graphiques permettant de visualiser nos données seront utilisés.
+
+Les analyses sont réalisées dans `r R.version.string` et plus précisément en utilisant la [SciViews Box 2025](https://www.sciviews.org/svbox/) dans [Saturn Cloud](https://saturncloud.io).
 
 ## Résultats
 
