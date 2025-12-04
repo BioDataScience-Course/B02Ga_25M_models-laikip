@@ -1,35 +1,3 @@
-
-# Importation et remaniement des données
-if (!"tools:tests" %in% search())
-  source(here::here("tests/tools_tests.R"), attach(NULL, name = "tools:tests"))
-
-# Configure Knitr to use AGG as graphic device
-knitr::opts_chunk$set(dev = "ragg_png")
-
-# Configuration de l'environnement
-SciViews::R("model", "infer")
-
-# Lecture des données
-read("data/otters_tool.rds")
-dat -> otters_tool
-source("R/import.R") #Exécute les remaniements de données fait dans import.R
-# Tableau des premières et dernières lignes
-tabularise$headtail(otters_tool)
-skimr::skim(otters_tool)
-naniar::vis_miss(otters_tool)
-
-# Remaniement des données 
-otters_tool$area <- as.factor(otters_tool$area)
-otters_tool$prey <- as.factor(otters_tool$prey)
-otters_tool$tooth_dam <- as.ordered(otters_tool$tooth_dam)
-otters_tool <-smutate(otters_tool, total_prey = urchin_num+crab_num+mussel_num+clam_num+snail_num+abalone_num)
-otters_tool <-smutate(otters_tool, urchin_percent = urchin_num/total_prey*100)
-otters_tool <-smutate(otters_tool, abalone_percent = abalone_num/total_prey*100)
-otters_tool <-smutate(otters_tool, mussel_percent = mussel_num/total_prey*100)
-otters_tool <-smutate(otters_tool, clam_percent = clam_num/total_prey*100)
-otters_tool <-smutate(otters_tool, snail_percent = snail_num/total_prey*100)
-otters_tool <-smutate(otters_tool, crab_percent = crab_num/total_prey*100)
-
 # Etape 1 : Importation des données brutes --------------------------------
 
 load("data/cache/Data_temp/dat.Rdata")
