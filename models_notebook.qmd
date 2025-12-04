@@ -259,7 +259,7 @@ summary(otters_lm3) |> tabularise()
 
 ```{r modele2}
 # Modèle ANCOVA
-otters_lm4 <- lm(data = otters_tool, tool_use ~ hardness * prey + 0)
+otters_lm4 <- lm(data = otters_tool,Epreycalc ~ hardness+tool_use+age)
 
 # Résumé du modèle
 summary_(otters_lm4) |> tabularise()
