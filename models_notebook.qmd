@@ -284,7 +284,16 @@ chart$residuals(otters_glm1)
 <!--% Élaborez un modèle linéaire généralisé ou mixte par paire d'étudiants dans cette section. -->
 
 ```{r modele4}
+# Modèle GLM
 
+otters_glm2 <- glm(data = otters_tool, Epreycalc ~ hardness + tool_use + age, family = quasipoisson)
+
+summary(otters_glm2) |> tabularise()
+
+
+# Graphique des résidus
+
+chart$residuals(otters_glm2) 
 ```
 
 ## Conclusion
