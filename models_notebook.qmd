@@ -238,6 +238,7 @@ summary_(otters_lm2) |> tabularise()
 # Équation paramétrée
 eq_(otters_lm2)
 
+
 # Graphiques des résidus
 chart$residuals(otters_lm2)
 ```
@@ -274,7 +275,13 @@ chart$residuals(otters_lm4)
 <!--% Élaborez un modèle linéaire généralisé ou mixte par paire d'étudiants dans cette section. -->
 
 ```{r modele3}
+# Modèle GLM
+otters_glm1 <- glm(data = otters_tool, urchin_num ~ tool_use * ageclass * length, family = poisson)
+# Résumé du modèle
+summary(otters_glm1) |> tabularise()
 
+# Graphique des résidus
+chart$residuals(otters_glm1)
 ```
 
 #### Modèle linéaire généralisé et/ou mixte 2
