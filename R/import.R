@@ -24,6 +24,7 @@ otters_tool <-smutate(otters_tool, crab_percent = crab_num/total_prey*100)
 
 load("data/cache/Data_temp/dat.Rdata")
 dat -> otters_tool
+rm(dat)
 
 # Etape 2 : Description brève des données ---------------------------------
 
