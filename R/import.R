@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Importation et remaniement des données
 if (!"tools:tests" %in% search())
   source(here::here("tests/tools_tests.R"), attach(NULL, name = "tools:tests"))
@@ -29,10 +30,27 @@ otters_tool <-smutate(otters_tool, clam_percent = clam_num/total_prey*100)
 otters_tool <-smutate(otters_tool, snail_percent = snail_num/total_prey*100)
 otters_tool <-smutate(otters_tool, crab_percent = crab_num/total_prey*100)
 
+=======
+>>>>>>> 701e09ecfbf95c978e6ac1553213cc3132f26235
 # Etape 1 : Importation des données brutes --------------------------------
 
 load("data/cache/Data_temp/dat.Rdata")
 dat -> otters_tool
+rm(dat)
+
+# Remaniement des données
+
+otters_tool$area <- as.factor(otters_tool$area)
+otters_tool$prey <- as.factor(otters_tool$prey)
+otters_tool$tooth_dam <- as.ordered(otters_tool$tooth_dam)
+otters_tool <- smutate(otters_tool, total_prey = urchin_num + crab_num + mussel_num + clam_num + snail_num + abalone_num)
+otters_tool <- smutate(otters_tool, urchin_percent = urchin_num/total_prey*100)
+otters_tool <- smutate(otters_tool, abalone_percent = abalone_num/total_prey*100)
+otters_tool <- smutate(otters_tool, mussel_percent = mussel_num/total_prey*100)
+otters_tool <- smutate(otters_tool, clam_percent = clam_num/total_prey*100)
+otters_tool <- smutate(otters_tool, snail_percent = snail_num/total_prey*100)
+otters_tool <- smutate(otters_tool, crab_percent = crab_num/total_prey*100)
+
 
 # Etape 2 : Description brève des données ---------------------------------
 
@@ -43,6 +61,7 @@ dat -> otters_tool
 
 
 # Etape 4 : Ajout des labels et des unités --------------------------------
+
 otters_tool <- labelise(otters_tool,
   label = list(
     otter = "Loutre",
@@ -75,8 +94,13 @@ otters_tool <- labelise(otters_tool,
     lg_Tool2 = "Logarithme au carré de la fréquence d'utilisation d'outils",
     BCI = "Indice de condition corporelle",
     LGI = "Indice de longueur corporelle",
-    size = "Taille normalisée"),
-    
+    size = "Taille normalisée",
+    total_prey = "nombre totale de proies consommées",
+    urchin_percent = "pourcentage d'oursins consommés",
+    abalone_percent = "pourcentage d'ormeaux consomés",
+    mussel_percent = "pourcentage de moules consomées",
+    clam_percent = "pourcentage de palourdes consomées",
+    snail_percent = "pourcentage d'escargots consomés"),
   units = list(
     otter = NA,
     PDE = "%",
@@ -109,23 +133,14 @@ otters_tool <- labelise(otters_tool,
     lg_Tool2 = NA,
     BCI = NA,
     LGI = NA,
-    size = NA)
-)
-otters_tool <- labelise(otters_tool,
-  label=list(
-    total_prey="nombre totale de proies consommées",
-    urchin_percent="pourcentage d'oursins consommés",
-    abalone_percent="pourcentage d'ormeaux consomés",
-    mussel_percent="pourcentage de moules consomées",
-    clam_percent="pourcentage de palourdes consomées",
-    snail_percent="pourcentage d'escargots consomés"),
-  units=list(
-    total_prey=NA,
-    urchin_percent="%",
-    abalone_percent="%",
-    mussel_percent="%",
-    clam_percent="%",
-    snail_percent="%"))
+    size = NA,
+    total_prey = NA,
+    urchin_percent = "%",
+    abalone_percent = "%",
+    mussel_percent = "%",
+    clam_percent = "%",
+    snail_percent = "%"))
+
 
 # Etape 5 : Sauvegarde locale des données retravaillées -------------------
 

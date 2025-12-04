@@ -51,10 +51,7 @@ SciViews::R("model", "infer")
 
 ```{r import}
 # Lecture des données
-read("data/otters_tool.rds")
-dat -> otters_tool
-source("R/import.R") #Exécute les remaniements de données fait dans import.R
-# Tableau des premières et dernières lignes
+otters_tool <- read("data/otters_tool.rds")
 tabularise$headtail(otters_tool)
 skimr::skim(otters_tool)
 naniar::vis_miss(otters_tool)
