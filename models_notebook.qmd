@@ -246,7 +246,7 @@ anova(otters_lm3, otters_lm3bis) |> tabularise()
 
 ```{r modele2}
 # Modèle ANCOVA
-otters_lm4 <- lm(data = otters_tool,total_prey~tool_use+ageclass,subset=tool_use>8)
+otters_lm4 <- lm(data = otters_tool,total_prey~tool_use+ageclass+sex,subset=tool_use>3)
 
 # Résumé du modèle
 summary_(otters_lm4) |> tabularise()
