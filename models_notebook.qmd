@@ -237,7 +237,7 @@ anova(otters_lm3, otters_lm3bis) |> tabularise()
 
 -   On teste tout de même le modèle sans interactions, on voit que la valeur de R carré est très proche.
 
--   On réalise une anova de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle, on voit que les deux modèles sont significativement différent l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3)
+-   On réalise une anova de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle, on voit que les deux modèles sont significativement différent l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3).
 
 #### Modèle linéaire 2
 
