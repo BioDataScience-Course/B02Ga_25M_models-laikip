@@ -8,6 +8,15 @@ knitr::opts_chunk$set(dev = "ragg_png")
 # Configuration de l'environnement
 SciViews::R("model", "infer")
 
+# Lecture des données
+read("data/otters_tool.rds")
+dat -> otters_tool
+source("R/import.R") #Exécute les remaniements de données fait dans import.R
+# Tableau des premières et dernières lignes
+tabularise$headtail(otters_tool)
+skimr::skim(otters_tool)
+naniar::vis_miss(otters_tool)
+
 # Remaniement des données 
 otters_tool$area <- as.factor(otters_tool$area)
 otters_tool$prey <- as.factor(otters_tool$prey)
