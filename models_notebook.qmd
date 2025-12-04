@@ -51,7 +51,7 @@ SciViews::R("model", "infer")
 
 ```{r import}
 # Lecture des données
-load("data/cache/Data_temp/dat.Rdata")
+read("data/otters_tool.rds")
 dat -> otters_tool
 source("R/import.R") #Exécute les remaniements de données fait dans import.R
 # Tableau des premières et dernières lignes
@@ -230,7 +230,7 @@ Concernant l'analyse des résidus :
 
 ```{r regression2}
 
-otters_lm2 <- lm(data = otters_tool, Epreycalc ~ tool_use + hardness + ageclass)
+otters_lm2 <- lm(data = otters_tool, tool_use ~ hardness + mass)
 
 # Résumé du modèle
 summary_(otters_lm2) |> tabularise()
