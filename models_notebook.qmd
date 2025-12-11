@@ -300,9 +300,8 @@ chart$residuals(otters_glm2)
 
 -   Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre totale de calories consommées).
 
-```{=html}
 <!-- -->
-```
+
 -   Nous observons déviance des résidus est correcte.
 
 -   Nous constatons une valeur extrêmes avec un effet levier important et une distance de cook importante aussi.
