@@ -120,9 +120,13 @@ Le facteur « autre » n’a pas été interprété ici, car il ne comporte 
 <!--% Graphique et interprétation de l'étudiant #4 ci-dessous. -->
 
 ```{r chart4}
-chart(data = otters_tool, lg_Tool ~ ageclass %fill=% sex)+
-  geom_boxplot()+
-  stat_summary(fun.data = give_n, geom = "text", hjust = 0.5)
+
+give_n2 <- function(x)
+  c(y = max(x) * 1.1, label = length(x)) 
+
+chart(data = otters_tool, lg_Tool ~ ageclass %fill=% sex) +
+  geom_boxplot() +
+  stat_summary(fun.data = give_n2, geom = "text", position = position_dodge(width = 0.75))
 ```
 
 ... interprétation #4...
