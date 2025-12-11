@@ -129,8 +129,6 @@ chart(data = otters_tool, lg_Tool ~ ageclass %fill=% sex) +
   stat_summary(fun.data = give_n2, geom = "text", position = position_dodge(width = 0.75))
 ```
 
-... interprétation #4...
-
 Nous constatons que l'usage d'outils augmente avec l'âge, ceci pourrait démontrer que cette une capacité acquise et non-innée.
 
 Les femelles ont plus tendance à utiliser des outils que les mâles, ceci pourrait être dû à un dimorphisme sexuel où les femelles auraient moins de force que les mâles.
@@ -162,7 +160,7 @@ car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
 rgl::rglwidget(width = 800, height = 800)
 ```
 
-on voit ici que notre modèle linéaire est globalement significatif au seuil alpha de 5%. De plus, l'effet du poucentage de moules consommées ainsi que celui des escargots consommés sont significativement différents de 0 au seuil alpha de 5%. R^2^ ajusté est plutôt correct avec une valeur de 0.8551.
+on voit ici que notre modèle linéaire est globalement significatif au seuil alpha de 5%. De plus, l'effet du pourcentage de moules consommées ainsi que celui des escargots consommés sont significativement différents de 0 au seuil alpha de 5%. R^2^ ajusté est plutôt correct avec une valeur de 0.8551.
 
 Concernant l'analyse des résidus :
 
@@ -304,13 +302,9 @@ chart$residuals(otters_glm2)
 
 -   Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre totale de calories consommées).
 
-<!-- -->
-
 -   Nous observons déviance des résidus est correcte.
 
 -   Nous constatons une valeur extrêmes avec un effet levier important et une distance de cook importante aussi.
-
--   
 
 ## Conclusion
 
