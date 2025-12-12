@@ -268,7 +268,7 @@ chart$residuals(otters_lm4)
 
 -   Les classes d'âge adultes et adultes âgés sont significatif ou presque au seuil alpha 5%, nous considérons donc une différence du nombre de proies consommées par classe d'age.
 
--   L'utilisation d'outils augmente le nombre de proies consommées.
+-   L'utilisation d'outils augmente le nombre de proies consommées pour les loutres qui utilisent des outils pour aumoins 3% de leur consommation de proies.
 
 -   Les résidus ne varient pas trop des valeurs prédites.
 
