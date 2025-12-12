@@ -95,7 +95,11 @@ ggplot(data = otters_tool, aes(x = length, y = mass, color = dietT)) +
 
 ```
 
-... interprétation #2...
+Ce graphique illustre l'évolution de la masse du corps des loutres en fonction de la variation de longueur de leur corps pour les différents types de régimes observés.
+
+On observe différentes pentes pour les différents régimes alimentaires, le régime alimentaire associé à la pente la plus forte est celui à base de moule ce qui pourrait indiquer que ce régime alimentaire est associé à la plus grande prise de masse corporelle chez l'espèce étudiée.
+
+Tandis que le régime alimentaire à base d'oursin semble être associé à la plus petite prise de masse corporelle chez cette espèce.
 
 <!--% Graphique et interprétation de l'étudiant #3 ci-dessous. -->
 
