@@ -44,6 +44,19 @@ Les analyses sont réalisées dans `r R.version.string` et plus précisément en
 
 ### Modèle 2
 
+```{r modele4}
+otters_glm2 <- glm(data = otters_tool, Epreycalc ~ hardness + tool_use + age, family = gaussian)
+summary(otters_glm2) |> tabularise()
+# Graphique des résidus
+chart$residuals(otters_glm2) 
+```
+
+-   Ce modèle est un modèle linéaire généralisé de famille "Gaussienne" puisque la variable est strictement positive et continue.
+
+-   Ce modèle vérifie bien la non-normalité de la distribution dans le cas de la variable "Epreycalc" qui correspond à l'apport calorifique total, ce modèle correspond donc bien aux conditions d'application d'une GLM.
+
+-   
+
 ## Discussion et Conclusion
 
 <!--% En tenant compte du but de votre carnet de notes et de vos résultats, discutez de résultats et proposez des conclusions à votre analyse en 5 à 10 phrases. -->

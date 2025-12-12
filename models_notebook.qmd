@@ -334,8 +334,6 @@ chart$residuals(otters_glm2)
 
 <!--% Lorsque toutes les analyses sont réalisées, terminez ce bloc-notes avec 3 à 6 phrases de conclusion en rapport avec ce que vous avez observé dans vos analyses. Quels sont les modèles les plus pertinents que vous retenez ? -->
 
--   le modèle 4 (GLM) semble le plus intéressant : le modèle reprenant l'influence de l'usage d'outil et l'âge de l'individu pour expliquer l'apport calorifique total en fonction de la dureté de la proie semble être intéressant, il respecte la condition initiale de non-normalité de la distribution
-
 ## Références
 
 <!--% N'indiquez rien ci-dessous. Quarto se chargera de rajouter vos références bibliographiques automatiquement. -->
