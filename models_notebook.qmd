@@ -306,7 +306,7 @@ chart$residuals(otters_glm1)
 ```{r modele4}
 # Modèle GLM
 
-otters_glm2 <- glm(data = otters_tool, Epreycalc ~ hardness + tool_use + age, family = gaussian(link = log))
+otters_glm2 <- glm(data = otters_tool, Epreycalc ~ hardness + tool_use + age, family = gaussian)
 
 summary(otters_glm2) |> tabularise()
 
