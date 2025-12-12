@@ -262,6 +262,14 @@ eq_(otters_lm4)
 chart$residuals(otters_lm4)
 ```
 
+-   Notre R² ajusté est moyen et explique 53 % de la variabilité du nombre de proies consommées.
+
+-   Nous constatons qu'il n'y a pas de différences significatives du nombre de proies consommées entre mâles et femelles.
+
+-   Les classes d'âge adultes et adultes âgés sont significatif ou presque au seuil alpha 5%, nous considérons donc une différence du nombre de proies consommées par classe d'age.
+
+-   L'utilisation d'outils augmente le nombre de proies consommées.
+
 -   Les résidus ne varient pas trop des valeurs prédites.
 
 -   Nous observons une non-normalité des résidus assez présentes.
@@ -314,7 +322,7 @@ chart$residuals(otters_glm2)
 
 -   Toutes les variables sont significatives au seuil alpha 5%.
 
--   Nous observons une déviance des résidus correcte.
+-   Nous observons une déviance des résidus correcte par rapport au parmamètre de dispersion.
 
 -   Nous constatons une valeur extrêmes avec un effet levier important et une distance de cook importante aussi.
 
@@ -322,7 +330,7 @@ chart$residuals(otters_glm2)
 
 <!--% Lorsque toutes les analyses sont réalisées, terminez ce bloc-notes avec 3 à 6 phrases de conclusion en rapport avec ce que vous avez observé dans vos analyses. Quels sont les modèles les plus pertinents que vous retenez ? -->
 
-...vos conclusions ici...
+-   Le modèle otters_glm2 explique bien l'apport calorifique totale car
 
 ## Références
 
