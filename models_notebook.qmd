@@ -172,7 +172,7 @@ Concernant l'analyse des résidus :
 
 -   L'étendue des résidus est égale à celle des valeurs prédites (A)
 
--   La linéarité est respectée avec un léger décalge sur le centre des valeurs prédites peut-être dû à un manque d'observations sur cette partie du graphique par rapport aux extrémités (A).
+-   La linéarité est respectée avec un léger décalage sur le centre des valeurs prédites peut-être dû à un manque d'observations sur cette partie du graphique par rapport aux extrémités (A).
 
 -   Les rédidus ont une distribution qui ne diffère pas trop de la normale avec malgré tout une asymétrie sur les valeurs faibles et fortes (B).
 
@@ -297,7 +297,7 @@ chart$residuals(otters_glm1)
 
 -   Nous avons testé différentes formes de GLM, nous nous assurons ici de la non-normalité de la distribution dans le cas de la variable réponse "urchin_num" (quantité d'oursin consommés).
 
--   Nous choisissons initialement une famille de type "poisson" car la situation correspond à un dénombrement, une abondance. En regardant la dispersion observée (déviance résiduelle/degrés de libertés des résidus) on se rend compte qu'on est dans une situation de surdispersion, on opte alors pour un quasipoisson : on observe que le paramètre de dispersion ne change pas même si la surdispersion est moins marquée mais que les valeurs p des test Z ont diminué indiquant que les variables ont des valeurs qui sont d'avantage significativement différente de 0 au seuil alpha de 5%.
+-   Nous choisissons initialement une famille de type "poisson" car la situation correspond à un dénombrement, une abondance. En regardant la dispersion observée (déviance résiduelle/degrés de libertés des résidus) nous nous rendons compte que nous sommes dans une situation de surdispersion, nous optons alors pour un quasipoisson : nous observe que le paramètre de dispersion ne change pas même si la surdispersion est moins marquée mais que les valeurs p des test Z ont diminué indiquant que les variables ont des valeurs qui sont d'avantage significativement différente de 0 au seuil alpha de 5%.
 
 -   Les modèles GLM de famille quasi étant moins robuste, cette augmentation de la significativité peut n'être que dû à cette diminution de robustesse donc le modèle ne semble pas plus pertinent.
 
@@ -320,9 +320,11 @@ summary(otters_glm2) |> tabularise()
 chart$residuals(otters_glm2) 
 ```
 
--   Nous choisissons une distribution gaussiene car notre variable est strictement positive, continu et positif.
+-   Nous choisissons une distribution gaussienne car notre variable est strictement positive, continu et positif.
 
 -   Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre totale de calories consommées).
+
+-   La déviance des résidus est très élevé ce qui remet en cause notre modèle.
 
 -   Toutes les variables sont significatives au seuil alpha 5%.
 

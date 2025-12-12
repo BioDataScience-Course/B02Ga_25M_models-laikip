@@ -40,7 +40,7 @@ Les analyses sont réalisées dans `r R.version.string` et plus précisément en
 
 <!--% Présentez les deux modèles les plus pertinents que vous avez sélectionnés. Structurez la section en deux parties avec deux titres de niveau trois.-->
 
-### Modèle 1
+### Modèle 1 : modèle linéaire
 
 ```{r modele1}
 otters_lm3 <- lm(data = otters_tool, mass ~ length * dietT, subset = length >= 80)
@@ -49,13 +49,13 @@ summary(otters_lm3) |> tabularise()
 chart$residuals(otters_lm3)
 ```
 
--   C'est un modèle linéaire, on voit au niveau de l'analyse des résidus que la distribution est plus au moins normale attention toute fois qu'il semble y avoir hétérosédasticité ce qui pourrait ouvir la voie à une GLM.
+-   C'est un modèle linéaire, nous observons au niveau de l'analyse des résidus que la distribution est plus au moins normale attention toute fois qu'il semble y avoir hétéroscédasticité ce qui pourrait ouvrir la voie à une GLM.
 
 -   Tous les paramètres ne sont pas significativement différent de 0 au seuil alpha de 5% en considérant les interactions entre variables mais certains le sont (comme pour l'interaction entre la longueur et le régime alimentaire qui se base sur le crabe, la moule et la palourde).
 
 -   Ce modèle indique donc que le régime alimentaire peut influencer l'évolution de la prise de masse corporelle en fonction de la longueur de l'individu (dans certains cas de régimes alimentaires).
 
-### Modèle 2
+### Modèle 2 : modèle linéaire généralisé
 
 ```{r modele4}
 otters_glm2 <- glm(data = otters_tool, Epreycalc ~ hardness + tool_use + age, family = gaussian)
@@ -64,18 +64,22 @@ summary(otters_glm2) |> tabularise()
 chart$residuals(otters_glm2) 
 ```
 
--   Ce modèle est un modèle linéaire généralisé de famille "Gaussienne" puisque la variable est strictement positive et continue.
+-   Ce modèle est un modèle linéaire généralisé de famille Gaussienne puisque la variable est strictement positive et continue.
 
--   Ce modèle vérifie bien la non-normalité de la distribution dans le cas de la variable "Epreycalc" qui correspond à l'apport calorifique total, ce modèle correspond donc bien aux conditions d'application d'une GLM.
+-   Ce modèle vérifie bien la non-normalité de la distribution dans le cas de la variable "Epreycalc" qui correspond à l'apport calorifique total, ce modèle correspond donc bien aux conditions d'application d'une GLM Gaussienne.
 
--   Pas de cas de sur/sous-dispersion marqué pour ce modèle.
+-   Toutes les variables sont significativement différent de 0 au seuil alpha de 5% .
 
--   Tous les paramètres sont significativement différent de 0 au seuil alpha de 5% si l'on n'y considère pas les interactions entre variables.
+-   Ce modèle indique donc que l'âge et l'utilisation d'outil ont une influence significative sur l'évolution de l'apport calorifique total en fonction de la dureté de la proie chez l'espèce *Enhydra lutris*.
 
--   Ce modèle indique donc que l'âge et l'utilisation d'outil ont une influence positive significative sur l'évolution de l'apport calorifique total en fonction de la dureté de la proie chez l'espèce *Enhydra lutris*.
+-   Ce modèle possède des déviances résiduelles très élevés ce qui nous empêche de confirmer la validité de ce modèle.
 
 ## Discussion et Conclusion
 
 <!--% En tenant compte du but de votre carnet de notes et de vos résultats, discutez de résultats et proposez des conclusions à votre analyse en 5 à 10 phrases. -->
+
+-   Modèle 1: Nous constatons des effets significatifs de la longueur et la consommation de crabes, moules et palourdes. Les effets sont négatifs donc les loutres qui mangent des crabes, moules ou palourdes ont tendance à avoir une masse plus faible. Mais en observant les interactions entre la longueur et le type de proie consommés nous constatons que il y a une différence significatifs de la masse. Les loutres plus longues se nourrissant de ces proies gagnent plus de masse plus elles sont longue. Ceci pourrait s'expliquer par une difficulté de capture ou une difficulté de consommation de ces proies par des individus plus petits. Comme les résidus ne répondent pas aux différents critères nécessaires (distribution des résidus, hétéroscédasticité et présence de valeurs extrêmes), il faudrait essayer d'ajuster le modèle avec une glm ou faire une transformation de variable. Cependant ce modèle nous confirme la présence d'une relation entre le régime alimentaire et la longueur pour expliquer la masse des loutres.
+
+-   Modèle 2 : Nous constatons des effets significatifs de la dureté de la proie, l'utilisation d'outils et l'age sur l'apport calorifique totale. La dureté de la proie à un effet significatif sur l'apport calorifique, notre hypothèse serait que les proies les plus dure contiennent plus de calories, ceci pourrait expliquer pourquoi malgré la difficulté dû à la dureté plus élevé de la proie les loutres consomment toujours ces proies. Contrairement à nos attentes l'utilisation d'outils à un effet négatif sur l'apport calorifique, ceci pourrait s'expliquer par le fait que l'utilisation d'outils n'est pas la méthode optimale pour la consommation de proie sans perdre trop d'énergie mais elle est une réponse à une contrainte que certaines loutres plus faibles où affecté par d'autres facteurs ne sont pas capables de se nourrir de certaine proies sans outils. L'apport calorifique est aussi influencé par l'age, nous pensons que les loutres plus âgés ont probablement plus de mal de consommer des proies plus dures ce qui pourrait s'expliquer par l'utilisation d'outils. Une étude plus approfondie sur les différents facteurs influençant la difficulté de consommation de proie plus dure est nécessaire pour expliquer nos résultats. La déviance de nos résidus remet en cause la validité de notre modèle, nous pensons que le jeu de données pourrait être amélioré en enlevant des valeurs extrêmes.
 
 ## Bibliographie
