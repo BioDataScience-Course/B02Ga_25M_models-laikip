@@ -334,7 +334,7 @@ chart$residuals(otters_glm2)
 
 <!--% Lorsque toutes les analyses sont réalisées, terminez ce bloc-notes avec 3 à 6 phrases de conclusion en rapport avec ce que vous avez observé dans vos analyses. Quels sont les modèles les plus pertinents que vous retenez ? -->
 
--   Le modèle linéaire 2 possède un R² ajusté moyen qui explique 52 % de la variabilité du nombre de proies consommées. Les résidus de ce modèle ne varient pas trop des valeurs prédites, l'homoscédasticité est raisonnablement valide mais il y a une non-normalité et des valeurs extrêmes. Si nous voulons utiliser ce modèle il faudrait envisager une glm et faire attention aux valeurs extrêmes.
+-   Le modèle linéaire 1 possède un R² ajusté de 0.8 donc il explique 80% de la variation de la masse. Les résidus de ce modèle varient fort par rapport valeurs prédites, l'homoscédasticité n'est pas valide, il y a une non-normalité et des valeurs extrêmes. Si nous voulons utiliser ce modèle il faudrait envisager une glm ou une modification des variables avec des fonctions tel que le logarithme et faire attention aux valeurs extrêmes.
 -   Le modèle otters_glm2 explique que les variables hardness(dureté de la proie), tool_use(fréquence d'utilisation d'outils) et l'age explique la variation de l'apport calorifique totale. Comme nous utilisons une glm la non-normalité des résidus n'affecte pas le modèle. La déviance résiduelle est correcte par rapport au paramètre de dispersion. Il faut faire attention aux valeurs extrêmes présentes.
 
 <!--% N'indiquez rien ci-dessous. Quarto se chargera de rajouter vos références bibliographiques automatiquement. -->
