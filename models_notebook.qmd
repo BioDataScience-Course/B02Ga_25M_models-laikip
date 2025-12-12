@@ -310,7 +310,7 @@ chart$residuals(otters_glm1)
 ```{r modele4}
 # Modèle GLM
 
-otters_glm2 <- glm(data = otters_tool, Epreycalc ~ hardness + tool_use + age, family = gaussian(link = log))
+otters_glm2 <- glm(data = otters_tool, Epreycalc ~ hardness + tool_use + age, family = gaussian)
 
 summary(otters_glm2) |> tabularise()
 
@@ -320,7 +320,7 @@ summary(otters_glm2) |> tabularise()
 chart$residuals(otters_glm2) 
 ```
 
--   Nous choisissons une distribution log-normale car notre variable est strictement positive, continu et positif.
+-   Nous choisissons une distribution gaussiene car notre variable est strictement positive, continu et positif.
 
 -   Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre totale de calories consommées).
 
@@ -328,7 +328,7 @@ chart$residuals(otters_glm2)
 
 -   Nous observons une déviance des résidus correcte par rapport au parmamètre de dispersion.
 
--   Nous constatons une valeur extrêmes avec un effet levier important et une distance de cook importante aussi.
+-   Nous constatons une valeur extrêmes avec un effet levier important ainsi que d'autres valeurs avec des distances de Cook importante.
 
 ## Conclusion
 
