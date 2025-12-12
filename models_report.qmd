@@ -42,6 +42,19 @@ Les analyses sont réalisées dans `r R.version.string` et plus précisément en
 
 ### Modèle 1
 
+```{r modele1}
+otters_lm3 <- lm(data = otters_tool, mass ~ length * dietT, subset = length >= 80)
+summary(otters_lm3) |> tabularise()
+
+chart$residuals(otters_lm3)
+```
+
+-   C'est un modèle linéaire, on voit au niveau de l'analyse des résidus que la distribution est plus au moins normale attention toute fois qu'il semble y avoir hétérosédasticité ce qui pourrait ouvir la voie à une GLM.
+
+-   Tous les paramètres ne sont pas significativement différent de 0 au seuil alpha de 5% en considérant les interactions entre variables mais certains le sont (comme pour l'interaction entre la longueur et le régime alimentaire qui se base sur le crabe, la moule et la palourde).
+
+-   Ce modèle indique donc que le régime alimentaire peut influencer l'évolution de la prise de masse corporelle en fonction de la longueur de l'individu (dans certains cas de régimes alimentaires).
+
 ### Modèle 2
 
 ```{r modele4}
@@ -55,7 +68,11 @@ chart$residuals(otters_glm2)
 
 -   Ce modèle vérifie bien la non-normalité de la distribution dans le cas de la variable "Epreycalc" qui correspond à l'apport calorifique total, ce modèle correspond donc bien aux conditions d'application d'une GLM.
 
--   
+-   Pas de cas de sur/sous-dispersion marqué pour ce modèle.
+
+-   Tous les paramètres sont significativement différent de 0 au seuil alpha de 5% si l'on n'y considère pas les interactions entre variables.
+
+-   Ce modèle indique donc que l'âge et l'utilisation d'outil ont une influence positive significative sur l'évolution de l'apport calorifique total en fonction de la dureté de la proie chez l'espèce *Enhydra lutris*.
 
 ## Discussion et Conclusion
 
