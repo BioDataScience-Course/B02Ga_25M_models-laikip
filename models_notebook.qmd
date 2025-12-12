@@ -324,13 +324,15 @@ chart$residuals(otters_glm2)
 
 -   Nous observons une déviance des résidus correcte par rapport au parmamètre de dispersion.
 
--   Nous constatons une valeur extrêmes avec un effet levier important ainsi que d'autres valeurs avec des distances de Cook importante.
+-   Nous constatons une valeur extrême avec un effet levier important ainsi que d'autres valeurs avec des distances de Cook importante.
+
+-   L'Homoscédasticité n'est pas parfaite mais nous la considérons suffisante pour nos inférences.
 
 ## Conclusion
 
 <!--% Lorsque toutes les analyses sont réalisées, terminez ce bloc-notes avec 3 à 6 phrases de conclusion en rapport avec ce que vous avez observé dans vos analyses. Quels sont les modèles les plus pertinents que vous retenez ? -->
 
-...
+-   Le modèle otters_glm2 explique que les variables hardness(dureté de la proie), tool_use(fréquence d'utilisation d'outils) et l'age explique la variation de l'apport calorifique totale. Comme nous utilisons une glm la non-normalité des résidus n'affecte pas le modèle. La déviance résiduelle est correcte par rapport au paramètre de dispersion. Il faut faire attention aux valeurs extrêmes présentes.
 
 ## Références
 
