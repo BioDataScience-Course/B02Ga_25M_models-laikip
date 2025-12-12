@@ -189,7 +189,7 @@ Concernant l'analyse des résidus :
 <!--% Ajustez une régression linéaire simple, multiple ou polynomiale par paire d'étudiants dans cette section (donc, deux modèles pour l'équipe de quatre). -->
 
 ```{r regression2}
-otters_lm2 <- lm(data = otters_tool,Epreycalc ~ hardness+tool_use+age)
+otters_lm2 <- lm(data = otters_tool,Epreycalc ~ hardness + tool_use + age)
 
 # Résumé du modèle
 summary_(otters_lm2) |> tabularise()
