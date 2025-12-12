@@ -129,7 +129,9 @@ chart(data = otters_tool, lg_Tool ~ ageclass %fill=% sex) +
   stat_summary(fun.data = give_n2, geom = "text", position = position_dodge(width = 0.75))
 ```
 
-Nous constatons que l'usage d'outils augmente avec l'âge, ceci pourrait démontrer que cette une capacité acquise et non-innée.
+Ce graphique illustre le log de la fréquence d’utilisation d’outils par les loutres en fonction de leur classe d'age.
+
+Nous constatons que l'usage d'outils est plus élevée chez les adultes agés, ceci pourrait démontrer que c'est une capacité acquise et non-innée.
 
 Les femelles ont plus tendance à utiliser des outils que les mâles, ceci pourrait être dû à un dimorphisme sexuel où les femelles auraient moins de force que les mâles.
 
@@ -160,7 +162,7 @@ car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
 rgl::rglwidget(width = 800, height = 800)
 ```
 
-on voit ici que notre modèle linéaire est globalement significatif au seuil alpha de 5%. De plus, l'effet du pourcentage de moules consommées ainsi que celui des escargots consommés sont significativement différents de 0 au seuil alpha de 5%. R^2^ ajusté est plutôt correct avec une valeur de 0.8551.
+Nous voyons ici que notre modèle linéaire est globalement significatif au seuil alpha de 5%. De plus, l'effet du pourcentage de moules consommées ainsi que celui des escargots consommés sont significativement différents de 0 au seuil alpha de 5%. R^2^ ajusté est plutôt correct avec une valeur de 0.8551.
 
 Concernant l'analyse des résidus :
 
@@ -170,15 +172,15 @@ Concernant l'analyse des résidus :
 
 -   Les rédidus ont une distribution qui ne diffère pas trop de la normale avec malgré tout une asymétrie sur les valeurs faibles et fortes (B).
 
--   Une hétéroscédasticité est possible, on observe des valeurs resserrées à gauche, des valeurs intermédiaires plutôt dispersées et des valeurs qui se resserrent à nouveau sur la droite du graphique (C).
+-   Une hétéroscédasticité est possible, nous observons des valeurs resserrées à gauche, des valeurs intermédiaires plutôt dispersées et des valeurs qui se resserrent à nouveau sur la droite du graphique (C).
 
--   On observe plusieurs valeurs possédant une distance cook importante ainsi qu'un effet levier important. Certaines valeurs possèdent juste une distance de cook importante et d'autre ne possèdent qu'un effet levier important (D).
+-   Nous observons plusieurs valeurs possédant une distance cook importante ainsi qu'un effet levier important. Certaines valeurs possèdent juste une distance de cook importante et d'autre ne possèdent qu'un effet levier important (D).
 
-    Sur le graphique, on peut observer que la distribution des observations n'est pas homogène. Beaucoup sont situées sur la gauche du graphique et sur la droite mais le centre de celui-ci est moins fourni en observation.
+    Sur le graphique, nous pouvons observer que la distribution des observations n'est pas homogène. Beaucoup sont situées sur la gauche du graphique et sur la droite mais le centre de celui-ci est moins fourni en observation.
 
-    De plus, on observe que lorsque la fréquence d'utilisation d'outils augmente, le pourcentage de moules consommées est assez faible comparé au pourcentage d'escargot consommés qui lui, est clairement élevé pour une utilisation d'outils fréquente.
+    De plus, nous observons que lorsque la fréquence d'utilisation d'outils augmente, le pourcentage de moules consommées est assez faible comparé au pourcentage d'escargot consommés qui lui, est clairement élevé pour une utilisation d'outils fréquente.
 
-    On pourrait émettre l'hypothèse via ce graphique que les Loutres utilisent plus d'outils pour manger des escargots que pour manger des moules.
+    Nous pourrions émettre l'hypothèse via ce graphique que les Loutres utilisent plus d'outils pour manger des escargots que pour manger des moules.
 
     Attention que notre modèle se base sur peu de données intermédiaires, c'est malheureusement le problème d'une expérience dans un milieu naturel. Il faut donc rester méfiant et objectif sur ce modèle.
 
@@ -208,15 +210,15 @@ La dureté moyenne de la proie, la fréquence d'utilisation d'outils et l'âge s
 
 Concernant l'analyse des résidus :
 
--   La linéarité est globalement respectée, la courbe de tendance reste proche de l'axe horizontal zéro, bien qu'on observe quelques valeurs prédites élevées (A).
+-   La linéarité est globalement respectée, la courbe de tendance reste proche de l'axe horizontal zéro, bien que nous observons quelques valeurs prédites élevées (A).
 
 -   Les résidus ont une distribution qui ne diffère pas trop de la normale avec une asymétrie sur les valeurs faibles et fortes (B).
 
--   Une hétéroscédasticité est probable. On observe que la majorité des données se situent sur la gauche et quelques valeurs dispersées sur la droite du graphique (C).
+-   Une hétéroscédasticité est probable. Nous observons que la majorité des données se situent sur la gauche et quelques valeurs dispersées sur la droite du graphique (C).
 
--   On observe quelques valeurs possédant un effet levier important. Cependant, ces points n'ont pas une distance de Cook importante (D).
+-   Nous observons quelques valeurs possédant un effet levier important. Cependant, ces points n'ont pas une distance de Cook importante (D).
 
-Sur ce graphique, on peut observer également que la distribution des observations n'est pas homogène. Une grande concentration de données se trouve sur la gauche sur l'axe des valeurs prédites, alors que les données à droite sont beaucoup plus rares et dispersées.
+Sur ces graphiques, nous pouvons observer également que la distribution des observations n'est pas homogène. Une grande concentration de données se trouve sur la gauche sur l'axe des valeurs prédites, alors que les données à droite sont beaucoup plus rares et dispersées.
 
 De plus, l'élargissement du nuage de points au centre des graphiques (A et C) suggère que le modèle a plus de mal à prédire avec précision les valeurs moyennes que les valeurs faibles.
 
@@ -236,11 +238,11 @@ anova(otters_lm3, otters_lm3bis) |> tabularise()
 
 -   Nous vérifions dans un premier temps que la variable réponse soit bien une numérique et que la distribution soit bien (globalement) normale.
 
--   On teste ensuite notre modèle avec interactions ; on voit que de multiples paramètres apparaissent significativement différent de 0 au seuil alpha de 5% via les test t de Student.
+-   Nous testons ensuite notre modèle avec interactions ; nous constatons que de multiples variables apparaissent significativement différent de 0 au seuil alpha de 5% via les test t de Student.
 
--   On teste tout de même le modèle sans interactions, on voit que la valeur de R carré est très proche.
+-   Nous testons tout de même le modèle sans interactions, nous constatons que la valeur de R carré est très proche.
 
--   On réalise une anova de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle, on voit que les deux modèles sont significativement différent l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3).
+-   Nous réalisons une anova de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle, nous observons que les deux modèles sont significativement différent l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3).
 
 #### Modèle linéaire 2
 
@@ -260,6 +262,14 @@ eq_(otters_lm4)
 chart$residuals(otters_lm4)
 ```
 
+-   Les résidus ne varient pas trop des valeurs prédites.
+
+-   Nous observons une non-normalité des résidus assez présentes.
+
+-   Nous considérons que ce modèle valide le critère d'Homoscédasticité.
+
+-   Nous constatons plusieurs valeurs extrêmes avec des effet de leviers élevés et des distances de Cook importante.
+
 #### Modèle linéaire généralisé et/ou mixte 1
 
 <!--% Élaborez un modèle linéaire généralisé ou mixte par paire d'étudiants dans cette section. -->
@@ -275,7 +285,7 @@ chart$residuals(otters_glm1)
 
 -   Nous avons testé différentes formes de GLM, nous nous assurons ici de la non-normalité de la distribution dans le cas de la variable réponse "urchin_num" (quantité d'oursin consommés).
 
--   Nous choisissons initialement une famille de type "poisson" car la situation correspond à un dénombrement, une abondance. En regardant la dispersion observée (déviance résiduelle/degrés de libertés des résidus) on se rend compte qu'on est dans une situation de surdispersion, on opte alors pour un quasipoisson : on observe que le paramètre de dispersion ne change pas même si la surdispersion est moins marquée mais que les valeurs p des test Z ont diminué indiquant que les paramètres ont des valeurs qui sont d'avantage significativement différente de 0 au seuil alpha de 5%.
+-   Nous choisissons initialement une famille de type "poisson" car la situation correspond à un dénombrement, une abondance. En regardant la dispersion observée (déviance résiduelle/degrés de libertés des résidus) on se rend compte qu'on est dans une situation de surdispersion, on opte alors pour un quasipoisson : on observe que le paramètre de dispersion ne change pas même si la surdispersion est moins marquée mais que les valeurs p des test Z ont diminué indiquant que les variables ont des valeurs qui sont d'avantage significativement différente de 0 au seuil alpha de 5%.
 
 -   Les modèles GLM de famille quasi étant moins robuste, cette augmentation de la significativité peut n'être que dû à cette diminution de robustesse donc le modèle ne semble pas plus pertinent.
 
@@ -302,7 +312,9 @@ chart$residuals(otters_glm2)
 
 -   Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre totale de calories consommées).
 
--   Nous observons déviance des résidus est correcte.
+-   Toutes les variables sont significatives au seuil alpha 5%.
+
+-   Nous observons une déviance des résidus correcte.
 
 -   Nous constatons une valeur extrêmes avec un effet levier important et une distance de cook importante aussi.
 
