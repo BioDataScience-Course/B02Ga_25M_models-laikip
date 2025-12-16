@@ -16,11 +16,11 @@ bibliography: references.bib
 
 <!--% Rédigez l'introduction de ce rapport en 5-6 phrases.-->
 
-Dans cette étude, le jeu de données fournit par Chris Law et al. dans leurs recherches publiées le 5 avril 2024 sur Dryad sera analysé. Les auteurs ont mené une étude sur environ 196 loutres de mer du sud (*Enhydra lutris* (L., 1758)) qui ont été équipées d'émetteurs radio.
+Dans cette étude, le jeu de données fourni par Chris Law et al. dans leurs recherches publiées le 5 avril 2024 sur Dryad sera analysé. Les auteurs ont mené une étude sur environ 196 loutres de mer du sud (*Enhydra lutris* (L., 1758)) qui ont été équipées d'émetteurs radio.
 
 *Enhydra lutris* (L., 1758) est un mammifère marin protégé depuis plusieurs décennies suite à son utilisation fréquente pour sa fourrure. Cette espèce contient trois sous-espèces : E.l. lutris, E.l. kenyoni, E.l. nereis. Ces sous-espèces sont principalement situées rspectivement en Russie et au Japon, en Alaska et au Canada et enfin, en Californie [@2011doroff].
 
-Cette étude montre que l'utilisation d'outils par les loutres permet un accès plus efficace aux proies plus dures et plus grandes. De plus, les auteurs avancent qu'un avantage mécanique est apporté par l'utilisation de ces outils. En effet, les outils remplacent les dents dans ce genre de manipulation de proies et par conséquent permettent un dommage dentaire moindre. Cela permet aussi d'atténuer le compromis entre l'accès aux proies, la santé dentaire et l'aport calorique. Les auteurs ont conclu que l'utilisation d'outils apporte un avantage dans la satisfaction des besoins caloriques en transformant des proies initialement inaccessibles. Ce comportement est essentiel dans les endroits où les proies deviennent rares [@law2024] .
+Cette étude montre que l'utilisation d'outils par les loutres permet un accès plus efficace aux proies plus dures et plus grandes. De plus, les auteurs avancent qu'un avantage mécanique est apporté par l'utilisation de ces outils. En effet, les outils remplacent les dents dans ce genre de manipulation de proies et par conséquent, permettent un dommage dentaire moindre. Cela permet aussi d'atténuer le compromis entre l'accès aux proies, la santé dentaire et l'apport calorique. Les auteurs ont conclu que l'utilisation d'outils apporte un avantage dans la satisfaction des besoins caloriques en transformant des proies initialement inaccessibles. Ce comportement est essentiel dans les endroits où les proies deviennent rares [@law2024] .
 
 <!--% Rédigez le but de ce rapport en 2 phrases.-->
 
@@ -51,7 +51,7 @@ chart$residuals(otters_lm3)
 
 -   C'est un modèle linéaire, nous observons au niveau de l'analyse des résidus que la distribution est plus au moins normale attention toute fois qu'il semble y avoir hétéroscédasticité ce qui pourrait ouvrir la voie à une GLM.
 
--   Tous les paramètres ne sont pas significativement différent de 0 au seuil alpha de 5% en considérant les interactions entre variables mais certains le sont (comme pour l'interaction entre la longueur et le régime alimentaire qui se base sur le crabe, la moule et la palourde).
+-   Tous les paramètres ne sont pas significativement différents de 0 au seuil alpha de 5% en considérant les interactions entre variables, mais certains le sont (comme pour l'interaction entre la longueur et le régime alimentaire qui se base sur le crabe, la moule et la palourde).
 
 -   Ce modèle indique donc que le régime alimentaire peut influencer l'évolution de la prise de masse corporelle en fonction de la longueur de l'individu (dans certains cas de régimes alimentaires).
 
@@ -64,22 +64,22 @@ summary(otters_glm2) |> tabularise()
 chart$residuals(otters_glm2) 
 ```
 
--   Ce modèle est un modèle linéaire généralisé de famille Gaussienne puisque la variable est strictement positive et continue.
+-   Ce modèle est un modèle linéaire généralisé de famille gaussienne puisque la variable est strictement positive et continue.
 
--   Ce modèle vérifie bien la non-normalité de la distribution dans le cas de la variable "Epreycalc" qui correspond à l'apport calorifique total, ce modèle correspond donc bien aux conditions d'application d'une GLM Gaussienne.
+-   Ce modèle vérifie bien la non-normalité de la distribution dans le cas de la variable "Epreycalc", qui correspond à l'apport calorifique total, ce modèle correspond donc bien aux conditions d'application d'une GLM gaussienne.
 
--   Toutes les variables sont significativement différent de 0 au seuil alpha de 5% .
+-   Toutes les variables sont significativement différentes de 0 au seuil alpha de 5% .
 
 -   Ce modèle indique donc que l'âge et l'utilisation d'outil ont une influence significative sur l'évolution de l'apport calorifique total en fonction de la dureté de la proie chez l'espèce *Enhydra lutris*.
 
--   Ce modèle possède des déviances résiduelles très élevés ce qui nous empêche de confirmer la validité de ce modèle.
+-   Ce modèle possède des déviances résiduelles très élevées, ce qui nous empêche de confirmer la validité de ce modèle.
 
 ## Discussion et Conclusion
 
 <!--% En tenant compte du but de votre carnet de notes et de vos résultats, discutez de résultats et proposez des conclusions à votre analyse en 5 à 10 phrases. -->
 
--   Modèle 1: Nous constatons des effets significatifs de la longueur et la consommation de crabes, moules et palourdes. Les effets sont négatifs donc les loutres qui mangent des crabes, moules ou palourdes ont tendance à avoir une masse plus faible. Mais en observant les interactions entre la longueur et le type de proie consommés nous constatons que il y a une différence significatifs de la masse. Les loutres plus longues se nourrissant de ces proies gagnent plus de masse plus elles sont longue. Ceci pourrait s'expliquer par une difficulté de capture ou une difficulté de consommation de ces proies par des individus plus petits. Comme les résidus ne répondent pas aux différents critères nécessaires (distribution des résidus, hétéroscédasticité et présence de valeurs extrêmes), il faudrait essayer d'ajuster le modèle avec une glm ou faire une transformation de variable. Cependant ce modèle nous confirme la présence d'une relation entre le régime alimentaire et la longueur pour expliquer la masse des loutres.
+-   Modèle 1: Nous constatons des effets significatifs de la longueur et la consommation de crabes, moules et palourdes. Les effets sont négatifs, donc les loutres qui mangent des crabes, des moules ou des palourdes ont tendance à avoir une masse plus faible. Mais en observant les interactions entre la longueur et le type de proie consommés, nous constatons qu'il y a une différence significative de la masse. Les loutres les plus longues se nourrissant de ces proies gagnent plus de masse plus elles sont longues. Ceci pourrait s'expliquer par une difficulté de capture ou une difficulté de consommation de ces proies par des individus plus petits. Comme les résidus ne répondent pas aux différents critères nécessaires (distribution des résidus, hétéroscédasticité et présence de valeurs extrêmes), il faudrait essayer d'ajuster le modèle avec une GLM ou faire une transformation de variable. Cependant, ce modèle nous confirme la présence d'une relation entre le régime alimentaire et la longueur pour expliquer la masse des loutres.
 
--   Modèle 2 : Nous constatons des effets significatifs de la dureté de la proie, l'utilisation d'outils et l'age sur l'apport calorifique totale. La dureté de la proie à un effet significatif sur l'apport calorifique, notre hypothèse serait que les proies les plus dure contiennent plus de calories, ceci pourrait expliquer pourquoi malgré la difficulté dû à la dureté plus élevé de la proie les loutres consomment toujours ces proies. Contrairement à nos attentes l'utilisation d'outils à un effet négatif sur l'apport calorifique, ceci pourrait s'expliquer par le fait que l'utilisation d'outils n'est pas la méthode optimale pour la consommation de proie sans perdre trop d'énergie mais elle est une réponse à une contrainte que certaines loutres plus faibles où affecté par d'autres facteurs ne sont pas capables de se nourrir de certaine proies sans outils. L'apport calorifique est aussi influencé par l'age, nous pensons que les loutres plus âgés ont probablement plus de mal de consommer des proies plus dures ce qui pourrait s'expliquer par l'utilisation d'outils. Une étude plus approfondie sur les différents facteurs influençant la difficulté de consommation de proie plus dure est nécessaire pour expliquer nos résultats. La déviance de nos résidus remet en cause la validité de notre modèle, nous pensons que le jeu de données pourrait être amélioré en enlevant des valeurs extrêmes.
+-   Modèle 2 : Nous constatons des effets significatifs de la dureté de la proie, l'utilisation d'outils et l'âge sur l'apport calorifique total. La dureté de la proie a un effet significatif sur l'apport calorifique. Notre hypothèse serait que les proies les plus dures contiennent plus de calories, ceci pourrait expliquer pourquoi, malgré la difficulté due à la dureté plus élevée de la proie, les loutres consomment toujours ces proies. Contrairement à nos attentes, l'utilisation d'outils a un effet négatif sur l'apport calorifique, ceci pourrait s'expliquer par le fait que l'utilisation d'outils n'est pas la méthode optimale pour la consommation de proie sans perdre trop d'énergie, mais elle est une réponse à une contrainte que certaines loutres plus faibles ou affectées par d'autres facteurs ne sont pas capables de se nourrir de certaines proies sans outils. L'apport calorifique est aussi influencé par l'âge; nous pensons que les loutres plus âgées ont probablement plus de mal à consommer des proies plus dures, ce qui pourrait s'expliquer par l'utilisation d'outils. Une étude plus approfondie sur les différents facteurs influençant la difficulté de consommation de proie plus dure est nécessaire pour expliquer nos résultats. La déviance de nos résidus remet en cause la validité de notre modèle, nous pensons que le jeu de données pourrait être amélioré en enlevant des valeurs extrêmes.
 
 ## Bibliographie
