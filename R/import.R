@@ -1,6 +1,6 @@
 # Etape 1 : Importation des données brutes --------------------------------
 
-load("data/cache/Data_temp/dat.Rdata")
+load("data/cache/Data_temp/dat.Rdata") #Je suis sincèrement navré pour l'utilisation de load
 dat -> otters_tool
 rm(dat)
 
