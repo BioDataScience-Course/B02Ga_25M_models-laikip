@@ -113,7 +113,7 @@ chart(otters_tool, lg_Tool ~ prey %fill=% prey) + geom_boxplot() +
 
 Ce graphique illustre la fréquence d’utilisation d’outils par les loutres en fonction de leur type de proie préféré.
 
-On observe clairement une utilisation marquée des outils lorsque la proie principale est l’escargot, qui se distingue nettement des autres catégories. En revanche, les loutres recourent rarement aux outils pour accéder aux ormeaux, palourdes, crabes, moules, et encore moins aux oursins.
+On observe une utilisation marquée des outils lorsque la proie principale est l’escargot, qui se distingue nettement des autres catégories. En revanche, les loutres recourent rarement aux outils pour accéder aux ormeaux, palourdes, crabes, moules, et encore moins aux oursins.
 
 On peut expliquer cette différence par la facilité à ouvrir ces espèces, contrairement à l'escargot qui nécessite une effort spécifique.
 
@@ -131,13 +131,13 @@ chart(data = otters_tool, lg_Tool ~ ageclass %fill=% sex) +
   stat_summary(fun.data = give_n2, geom = "text", position = position_dodge(width = 0.75))
 ```
 
-Ce graphique illustre le log de la fréquence d’utilisation d’outils par les loutres en fonction de leur classe d'age.
+Ce graphique illustre le logarithme de la fréquence d’utilisation d’outils par les loutres en fonction de leur classe d'age.
 
-Nous constatons que l'usage d'outils est plus élevée chez les adultes agés, ceci pourrait démontrer que c'est une capacité acquise et non-innée.
+Nous constatons que l'utilisation d'outils est plus élevée chez les adultes âgés, ceci pourrait démontrer que c'est une capacité acquise et non innée.
 
 Les femelles ont plus tendance à utiliser des outils que les mâles, ceci pourrait être dû à un dimorphisme sexuel où les femelles auraient moins de force que les mâles.
 
-Nous constatons quelques valeurs extrêmes dans les 3 classes d'ages.
+Nous constatons une valeur extrême pour la classe adulte âgée (AA).
 
 ### Modélisation
 
