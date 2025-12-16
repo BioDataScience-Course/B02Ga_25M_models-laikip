@@ -164,27 +164,27 @@ car::scatter3d(data = otters_tool, tool_use ~ mussel_percent + snail_percent,
 rgl::rglwidget(width = 800, height = 800)
 ```
 
-Nous voyons ici que notre modèle linéaire est globalement significatif au seuil alpha de 5%. De plus, l'effet du pourcentage de moules consommées ainsi que celui des escargots consommés sont significativement différents de 0 au seuil alpha de 5%. R^2^ ajusté est plutôt correct avec une valeur de 0.8551.
+Nous voyons ici que notre modèle linéaire est globalement significatif au seuil alpha de 5%. De plus, l'effet du pourcentage de moules consommées ainsi que celui des escargots consommés sont significativement différents de 0 au seuil alpha de 5%. Le R^2^ ajusté est plutôt correct avec une valeur de 0.8551.
 
 Concernant l'analyse des résidus :
 
--   L'étendue des résidus est égale à celle des valeurs prédites (A)
+-   L'étendue des résidus est égale à celle des valeurs prédites (A).
 
 -   La linéarité est respectée avec un léger décalage sur le centre des valeurs prédites peut-être dû à un manque d'observations sur cette partie du graphique par rapport aux extrémités (A).
 
--   Les rédidus ont une distribution qui ne diffère pas trop de la normale avec malgré tout une asymétrie sur les valeurs faibles et fortes (B).
+-   Les résidus ont une distribution qui ne diffère pas trop de la normale avec malgré tout une asymétrie sur les valeurs faibles et fortes (B).
 
 -   Une hétéroscédasticité est possible, nous observons des valeurs resserrées à gauche, des valeurs intermédiaires plutôt dispersées et des valeurs qui se resserrent à nouveau sur la droite du graphique (C).
 
--   Nous observons plusieurs valeurs possédant une distance cook importante ainsi qu'un effet levier important. Certaines valeurs possèdent juste une distance de cook importante et d'autre ne possèdent qu'un effet levier important (D).
+-   Nous observons plusieurs valeurs possédant une distance Cook importante ainsi qu'un effet levier important. Certaines valeurs possèdent juste une distance de Cook importante et d'autre ne possèdent qu'un effet levier important (D).
 
-    Sur le graphique, nous pouvons observer que la distribution des observations n'est pas homogène. Beaucoup sont situées sur la gauche du graphique et sur la droite mais le centre de celui-ci est moins fourni en observation.
+Sur le graphique, nous pouvons observer que la distribution des observations n'est pas homogène. Beaucoup sont situées sur la gauche du graphique et sur la droite mais le centre de celui-ci est moins fourni en observation.
 
-    De plus, nous observons que lorsque la fréquence d'utilisation d'outils augmente, le pourcentage de moules consommées est assez faible comparé au pourcentage d'escargot consommés qui lui, est clairement élevé pour une utilisation d'outils fréquente.
+De plus, nous observons que lorsque la fréquence d'utilisation d'outils augmente, le pourcentage de moules consommées est assez faible comparé au pourcentage d'escargot consommés qui lui, est clairement élevé pour une utilisation d'outils fréquente.
 
-    Nous pourrions émettre l'hypothèse via ce graphique que les Loutres utilisent plus d'outils pour manger des escargots que pour manger des moules.
+Nous pourrions émettre l'hypothèse via ce graphique que les Loutres utilisent plus d'outils pour manger des escargots que pour manger des moules.
 
-    Attention que notre modèle se base sur peu de données intermédiaires, c'est malheureusement le problème d'une expérience dans un milieu naturel. Il faut donc rester méfiant et objectif sur ce modèle.
+Attention que notre modèle se base sur peu de données intermédiaires, c'est malheureusement le problème d'une expérience dans un milieu naturel. Il faut donc rester méfiant et objectif sur ce modèle.
 
 #### Régression linéaire 2
 
@@ -206,7 +206,7 @@ chart$residuals(otters_lm2)
 
 Notre second modèle est significatif au seuil alpha de 5%.
 
-Notre R² ajusté est moyen et explique 43 % de la variabilité de l'apport calorifique.
+Le R² ajusté est moyen et explique 43 % de la variabilité de l'apport calorifique.
 
 La dureté moyenne de la proie, la fréquence d'utilisation d'outils et l'âge sont tous significatifs au seuil alpha de 5%. Ceci explique significativement que les proies sont associées à un apport calorifique plus élevé. La fréquence d’utilisation d’outils influence également significativement l’apport calorifique. L’effet significatif de l’âge suggère un possible effet d’expérience ou d’apprentissage.
 
@@ -238,13 +238,13 @@ otters_lm3bis <- lm(data = otters_tool, mass ~ length + dietT, subset = length >
 anova(otters_lm3, otters_lm3bis) |> tabularise()
 ```
 
--   Nous vérifions dans un premier temps que la variable réponse soit bien une numérique et que la distribution soit bien (globalement) normale.
+Dans un premier temps, il est vérifié que la variable réponse soit bien une numérique et que la distribution soit bien (globalement) normale.
 
--   Nous testons ensuite notre modèle avec interactions ; nous constatons que de multiples variables apparaissent significativement différent de 0 au seuil alpha de 5% via les test t de Student.
+Ensuite, le test du modèle avec interactions révèle que de multiples variables apparaissent significativement différentes de 0 au seuil alpha de 5% via les tests t de Student.
 
--   Nous testons tout de même le modèle sans interactions, nous constatons que la valeur de R carré est très proche.
+L'examen du modèle sans interactions montre toutefois une valeur de R carré très proche.
 
--   Nous réalisons une anova de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle, nous observons que les deux modèles sont significativement différent l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3).
+Nous réalisons une anova de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle, on observe que les deux modèles sont significativement différents l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3).
 
 #### Modèle linéaire 2
 
@@ -264,21 +264,21 @@ eq_(otters_lm4)
 chart$residuals(otters_lm4)
 ```
 
--   Notre R² ajusté est moyen et explique 52 % de la variabilité du nombre de proies consommées.
+Notre R² ajusté est moyen et explique 52 % de la variabilité du nombre de proies consommées.
 
--   Nous constatons qu'il n'y a pas de différences significatives du nombre de proies consommées entre mâles et femelles.
+Nous constatons qu'il n'y a pas de différences significatives du nombre de proies consommées entre mâles et femelles.
 
--   Les classes d'âge adultes et adultes âgés sont significatif ou presque au seuil alpha 5%, nous considérons donc une différence du nombre de proies consommées par classe d'age.
+Les classes d'âge adultes et adultes âgés sont significatif ou presque au seuil alpha 5%, nous considérons donc une différence du nombre de proies consommées par classe d'age.
 
--   L'utilisation d'outils augmente le nombre de proies consommées pour les loutres qui utilisent des outils pour aumoins 3% de leur consommation de proies.
+L'utilisation d'outils augmente le nombre de proies consommées pour les loutres qui utilisent des outils pour aumoins 3% de leur consommation de proies.
 
--   Les résidus ne varient pas trop des valeurs prédites.
+Les résidus ne varient pas trop des valeurs prédites.
 
--   Nous observons une non-normalité des résidus assez présentes.
+Nous observons une non-normalité des résidus assez présentes.
 
--   Nous considérons que ce modèle valide le critère d'Homoscédasticité.
+Nous considérons que ce modèle valide le critère d'Homoscédasticité.
 
--   Nous constatons plusieurs valeurs extrêmes avec des effet de leviers élevés et des distances de Cook importante.
+Nous constatons plusieurs valeurs extrêmes avec des effet de leviers élevés et des distances de Cook importante.
 
 #### Modèle linéaire généralisé et/ou mixte 1
 
@@ -293,13 +293,13 @@ summary(otters_glm1) |> tabularise()
 chart$residuals(otters_glm1)
 ```
 
--   Nous avons testé différentes formes de GLM, nous nous assurons ici de la non-normalité de la distribution dans le cas de la variable réponse "urchin_num" (quantité d'oursin consommés).
+Nous avons testé différentes formes de GLM, nous nous assurons ici de la non-normalité de la distribution dans le cas de la variable réponse "urchin_num" (quantité d'oursin consommés).
 
--   Nous choisissons initialement une famille de type "poisson" car la situation correspond à un dénombrement, une abondance. En regardant la dispersion observée (déviance résiduelle/degrés de libertés des résidus) nous nous rendons compte que nous sommes dans une situation de surdispersion, nous optons alors pour un quasipoisson : nous observe que le paramètre de dispersion ne change pas même si la surdispersion est moins marquée mais que les valeurs p des test Z ont diminué indiquant que les variables ont des valeurs qui sont d'avantage significativement différente de 0 au seuil alpha de 5%.
+Nous choisissons initialement une famille de type "poisson" car la situation correspond à un dénombrement, une abondance. En regardant la dispersion observée (déviance résiduelle/degrés de libertés des résidus) nous nous rendons compte que nous sommes dans une situation de surdispersion, nous optons alors pour un quasipoisson : nous observe que le paramètre de dispersion ne change pas même si la surdispersion est moins marquée mais que les valeurs p des test Z ont diminué indiquant que les variables ont des valeurs qui sont d'avantage significativement différente de 0 au seuil alpha de 5%.
 
--   Les modèles GLM de famille quasi étant moins robuste, cette augmentation de la significativité peut n'être que dû à cette diminution de robustesse donc le modèle ne semble pas plus pertinent.
+Les modèles GLM de famille quasi étant moins robuste, cette augmentation de la significativité peut n'être que dû à cette diminution de robustesse donc le modèle ne semble pas plus pertinent.
 
--   Étoffer le jeu de données pourrait être une piste d'avancement, peut-être cela permettrait-il d'avoir de meilleurs modèles GLM.
+Étoffer le jeu de données pourrait être une piste d'avancement, peut-être cela permettrait-il d'avoir de meilleurs modèles GLM.
 
 #### Modèle linéaire généralisé et/ou mixte 2
 
@@ -318,15 +318,15 @@ summary(otters_glm2) |> tabularise()
 chart$residuals(otters_glm2) 
 ```
 
--   Nous choisissons une distribution gaussienne car notre variable est strictement positive, continu et positif.
+Nous choisissons une distribution gaussienne car notre variable est strictement positive, continu et positif.
 
--   Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre totale de calories consommées).
+Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre totale de calories consommées).
 
--   La déviance des résidus est très élevé ce qui remet en cause notre modèle.
+La déviance des résidus est très élevé ce qui remet en cause notre modèle.
 
--   Toutes les variables sont significatives au seuil alpha 5%.
+Toutes les variables sont significatives au seuil alpha 5%.
 
--   Nous constatons une valeur extrêmes avec un effet levier important ainsi que d'autres valeurs avec des distances de Cook importante.
+Nous constatons une valeur extrêmes avec un effet levier important ainsi que d'autres valeurs avec des distances de Cook importante.
 
 ## Conclusion
 
