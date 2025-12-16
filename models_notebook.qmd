@@ -68,11 +68,9 @@ chart(otters_tool, ~ dietT | area) +
 
 ```
 
-Ce graphique a pour but de déterminer les occurences des différents types de proies consommées dans chaque zone étudiée.
+Ce graphique a pour but de déterminer les occurrences des différents types de proies consommées dans chaque zone étudiée.
 
-Cela pourra potentiellement permettre par la suite d'interpréter des observations telles que le pourcentage d'utilisation d'outils dans les différentes zones, la masse ou la taille des individus de chaque zone, ...
-
-on voit ici clairement que dans certaines zones (comme ElkhornSlough) la diversité des types de proies consommées est faible tandis que dans d'autres zones (comme Monterey et BigSur) le type de proie consommée est beaucoup plus diversifié et homogène.
+Nous voyons ici clairement que dans certaines zones (comme ElkhornSlough) la diversité des types de proies consommées est faible tandis que dans d'autres zones (comme Monterey et BigSur) le type de proie consommée est beaucoup plus diversifié et homogène.
 
 PiedrasBlancas et SLO sont également plus généraux dans les types de proies consommées mais on observe malgré tout des préférences pour certaines espèces comme le crabe par exemple.
 
