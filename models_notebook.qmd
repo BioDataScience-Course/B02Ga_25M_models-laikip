@@ -23,7 +23,7 @@ bibliography: references.bib
 
 L'étude réalisée par Chris Law et al. publiée le 5 avril 2024 est analysée dans cette recherche. Les auteurs y mènent une étude sur environ 196 loutres de mer du sud (*Enhydra lutris* (L., 1758)) équipées d'émetteurs radio.
 
-Selon les auteurs, l'utilisation d'outils apporte un avantage dans le maintient de la santé dentaire ainsi que dans l'atténuation du compromis entre l'accès aux proies, la santé dentaire et l'aport calorique. De plus, cette technique donne accès à des proies plus dures et plus grandes. Ce qui est essentiel dans des lieux où les proies sont rares [@law2024].
+Selon les auteurs, l'utilisation d'outils apporte un avantage dans le maintien de la santé dentaire ainsi que dans l'atténuation du compromis entre l'accès aux proies, la santé dentaire et l'apport calorique. De plus, cette technique donne accès à des proies plus dures et plus grandes. Ce qui est essentiel dans des lieux où les proies sont rares [@law2024].
 
 Il est nécessaire d'apporter des preuves supplémentaires à cette étude afin de confirmer les différents résultats et les différentes conclusions qui ont été fournies.
 
@@ -176,13 +176,13 @@ Concernant l'analyse des résidus :
 
 -   Une hétéroscédasticité est possible, nous observons des valeurs resserrées à gauche, des valeurs intermédiaires plutôt dispersées et des valeurs qui se resserrent à nouveau sur la droite du graphique (C).
 
--   Nous observons plusieurs valeurs possédant une distance Cook importante ainsi qu'un effet levier important. Certaines valeurs possèdent juste une distance de Cook importante et d'autre ne possèdent qu'un effet levier important (D).
+-   Nous observons plusieurs valeurs possédant une distance Cook importante ainsi qu'un effet de levier important. Certaines valeurs possèdent juste une distance de Cook importante et d'autres ne possèdent qu'un effet de levier important (D).
 
-Sur le graphique, nous pouvons observer que la distribution des observations n'est pas homogène. Beaucoup sont situées sur la gauche du graphique et sur la droite mais le centre de celui-ci est moins fourni en observation.
+Sur le graphique, nous pouvons observer que la distribution des observations n'est pas homogène. Beaucoup sont situées sur la gauche du graphique et sur la droite mais le centre de celui-ci est moins fourni en observations.
 
-De plus, nous observons que lorsque la fréquence d'utilisation d'outils augmente, le pourcentage de moules consommées est assez faible comparé au pourcentage d'escargot consommés qui lui, est clairement élevé pour une utilisation d'outils fréquente.
+De plus, nous observons que lorsque la fréquence d'utilisation d'outils augmente, le pourcentage de moules consommées est assez faible comparé au pourcentage d'escargots consommés qui lui, est clairement élevé pour une utilisation d'outils fréquente.
 
-Nous pourrions émettre l'hypothèse via ce graphique que les Loutres utilisent plus d'outils pour manger des escargots que pour manger des moules.
+Nous pourrions émettre l'hypothèse via ce graphique que les loutres utilisent plus d'outils pour manger des escargots que pour manger des moules.
 
 Attention que notre modèle se base sur peu de données intermédiaires, c'est malheureusement le problème d'une expérience dans un milieu naturel. Il faut donc rester méfiant et objectif sur ce modèle.
 
@@ -218,7 +218,7 @@ Concernant l'analyse des résidus :
 
 -   Une hétéroscédasticité est probable. Nous observons que la majorité des données se situent sur la gauche et quelques valeurs dispersées sur la droite du graphique (C).
 
--   Nous observons quelques valeurs possédant un effet levier important. Cependant, ces points n'ont pas une distance de Cook importante (D).
+-   Nous observons quelques valeurs possédant un effet de levier important. Cependant, ces points n'ont pas une distance de Cook importante (D).
 
 Sur ces graphiques, nous pouvons observer également que la distribution des observations n'est pas homogène. Une grande concentration de données se trouve sur la gauche sur l'axe des valeurs prédites, alors que les données à droite sont beaucoup plus rares et dispersées.
 
@@ -238,13 +238,13 @@ otters_lm3bis <- lm(data = otters_tool, mass ~ length + dietT, subset = length >
 anova(otters_lm3, otters_lm3bis) |> tabularise()
 ```
 
-Dans un premier temps, il est vérifié que la variable réponse soit bien une numérique et que la distribution soit bien (globalement) normale.
+Dans un premier temps, il est vérifié que la variable réponse soit bien numérique et que la distribution soit bien (globalement) normale.
 
 Ensuite, le test du modèle avec interactions révèle que de multiples variables apparaissent significativement différentes de 0 au seuil alpha de 5% via les tests t de Student.
 
 L'examen du modèle sans interactions montre toutefois une valeur de R carré très proche.
 
-Nous réalisons une anova de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle, on observe que les deux modèles sont significativement différents l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3).
+Nous réalisons une ANOVA de comparaison des deux modèles (celui avec et sans interaction) pour vérifier le choix de modèle. On observe que les deux modèles sont significativement différents l'un de l'autre au seuil alpha de 5% ce qui nous mène à choisir le modèle le plus complexe soit celui avec interactions (otters_lm3).
 
 #### Modèle linéaire 2
 
@@ -268,7 +268,7 @@ Le R² ajusté est moyen et explique 52 % de la variabilité du nombre de proies
 
 Il n'est pas constaté de différences significatives du nombre de proies consommées entre mâles et femelles.
 
-Les classes d'âge adultes et adultes âgés sont significatives ou presque au seuil alpha 5%, ce qui suggère donc une différence du nombre de proies consommées par classe d'âge.
+Les classes d'âge adultes et adultes âgés sont significatives ou presque au seuil alpha de 5%, ce qui suggère donc une différence du nombre de proies consommées par classe d'âge.
 
 L'utilisation d'outils augmente le nombre de proies consommées pour les loutres qui utilisent des outils pour au moins 3% de leur consommation de proies.
 
@@ -335,6 +335,6 @@ Nous constatons une valeur extrême avec un effet de levier important ainsi que 
 -   Le modèle linéaire 1 possède un R² ajusté de 0.8, il explique donc 80 % de la variation de la masse. Les résidus de ce modèle varient fort par rapport aux valeurs prédites, l'homoscédasticité n'est pas valide, il y a une non-normalité et des valeurs extrêmes. Si nous voulons utiliser ce modèle, il faudrait envisager une GLM ou une modification des variables avec des fonctions telles que le logarithme et faire attention aux valeurs extrêmes.
 -   Le modèle linéaire 2 possède un R² ajusté moyen, qui explique 52 % de la variabilité du nombre de proies consommées. Les résidus de ce modèle ne varient pas trop des valeurs prédites, l'homoscédasticité est raisonnablement valide, mais il y a une non-normalité et des valeurs extrêmes. Si nous voulons utiliser ce modèle, il faudrait envisager une GLM et faire attention aux valeurs extrêmes.
 -   Le modèle otters_glm1 explique la variation du nombre d'oursins consommés par les variables tool_use (fréquence d'utilisation d'outils), length (longueur de la loutre) et ageclass (classe d'âge). Il y a surdispersion des résidus, donc nous faisons un modèle quasi-poisson, mais la surdispersion reste importante. Ce modèle ne peut donc pas être utilisé ainsi et étoffer le jeu de données pourrait être une piste d'avancement.
--   Le modèle otters_glm2 explique que les variables hardness (dureté de la proie), tool_use (fréquence d'utilisation d'outils) et l'âge explique la variation de l'apport calorifique total. Comme nous utilisons une GLM la non-normalité des résidus n'affecte pas le modèle. Il faut faire attention aux valeurs extrêmes présentes.
+-   Le modèle otters_glm2 explique que les variables hardness (dureté de la proie), tool_use (fréquence d'utilisation d'outils) et l'âge expliquent la variation de l'apport calorifique total. Comme nous utilisons une GLM la non-normalité des résidus n'affecte pas le modèle. Il faut faire attention aux valeurs extrêmes présentes.
 
 <!--% N'indiquez rien ci-dessous. Quarto se chargera de rajouter vos références bibliographiques automatiquement. -->
