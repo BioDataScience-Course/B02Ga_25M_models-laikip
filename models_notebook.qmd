@@ -264,21 +264,21 @@ eq_(otters_lm4)
 chart$residuals(otters_lm4)
 ```
 
-Notre R² ajusté est moyen et explique 52 % de la variabilité du nombre de proies consommées.
+Le R² ajusté est moyen et explique 52 % de la variabilité du nombre de proies consommées.
 
-Nous constatons qu'il n'y a pas de différences significatives du nombre de proies consommées entre mâles et femelles.
+Il n'est pas constaté de différences significatives du nombre de proies consommées entre mâles et femelles.
 
-Les classes d'âge adultes et adultes âgés sont significatif ou presque au seuil alpha 5%, nous considérons donc une différence du nombre de proies consommées par classe d'age.
+Les classes d'âge adultes et adultes âgés sont significatives ou presque au seuil alpha 5%, ce qui suggère donc une différence du nombre de proies consommées par classe d'âge.
 
-L'utilisation d'outils augmente le nombre de proies consommées pour les loutres qui utilisent des outils pour aumoins 3% de leur consommation de proies.
+L'utilisation d'outils augmente le nombre de proies consommées pour les loutres qui utilisent des outils pour au moins 3% de leur consommation de proies.
 
 Les résidus ne varient pas trop des valeurs prédites.
 
-Nous observons une non-normalité des résidus assez présentes.
+Une non-normalité des résidus assez présente est observée.
 
-Nous considérons que ce modèle valide le critère d'Homoscédasticité.
+Nous considérons que ce modèle valide le critère d'homoscédasticité.
 
-Nous constatons plusieurs valeurs extrêmes avec des effet de leviers élevés et des distances de Cook importante.
+Plusieurs valeurs extrêmes avec des effets de leviers élevés et des distances de Cook importantes sont constatées.
 
 #### Modèle linéaire généralisé et/ou mixte 1
 
@@ -293,11 +293,11 @@ summary(otters_glm1) |> tabularise()
 chart$residuals(otters_glm1)
 ```
 
-Nous avons testé différentes formes de GLM, nous nous assurons ici de la non-normalité de la distribution dans le cas de la variable réponse "urchin_num" (quantité d'oursin consommés).
+Nous avons testé différentes formes de GLM, nous nous assurons ici de la non-normalité de la distribution dans le cas de la variable réponse "urchin_num" (quantité d'oursins consommés).
 
 Nous choisissons initialement une famille de type "poisson" car la situation correspond à un dénombrement, une abondance. En regardant la dispersion observée (déviance résiduelle/degrés de libertés des résidus) nous nous rendons compte que nous sommes dans une situation de surdispersion, nous optons alors pour un quasipoisson : nous observe que le paramètre de dispersion ne change pas même si la surdispersion est moins marquée mais que les valeurs p des test Z ont diminué indiquant que les variables ont des valeurs qui sont d'avantage significativement différente de 0 au seuil alpha de 5%.
 
-Les modèles GLM de famille quasi étant moins robuste, cette augmentation de la significativité peut n'être que dû à cette diminution de robustesse donc le modèle ne semble pas plus pertinent.
+Les modèles GLM de famille quasi étant moins robustes, cette augmentation de la significativité peut n'être que due à cette diminution de robustesse donc le modèle ne semble pas plus pertinent.
 
 Étoffer le jeu de données pourrait être une piste d'avancement, peut-être cela permettrait-il d'avoir de meilleurs modèles GLM.
 
@@ -318,23 +318,23 @@ summary(otters_glm2) |> tabularise()
 chart$residuals(otters_glm2) 
 ```
 
-Nous choisissons une distribution gaussienne car notre variable est strictement positive, continu et positif.
+Nous choisissons une distribution gaussienne car notre variable est strictement positive, continue et positive.
 
-Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre totale de calories consommées).
+Nous avons testé différentes formes de GLM, nous nous assurons ici de la légère non-normalité de la distribution dans le cas de la variable réponse "Epreycalc" (nombre total de calories consommées).
 
-La déviance des résidus est très élevé ce qui remet en cause notre modèle.
+La déviance des résidus est très élevée ce qui remet en cause notre modèle.
 
 Toutes les variables sont significatives au seuil alpha 5%.
 
-Nous constatons une valeur extrêmes avec un effet levier important ainsi que d'autres valeurs avec des distances de Cook importante.
+Nous constatons une valeur extrême avec un effet de levier important ainsi que d'autres valeurs avec des distances de Cook importantes.
 
 ## Conclusion
 
 <!--% Lorsque toutes les analyses sont réalisées, terminez ce bloc-notes avec 3 à 6 phrases de conclusion en rapport avec ce que vous avez observé dans vos analyses. Quels sont les modèles les plus pertinents que vous retenez ? -->
 
--   Le modèle linéaire 1 possède un R² ajusté de 0.8 donc il explique 80% de la variation de la masse. Les résidus de ce modèle varient fort par rapport valeurs prédites, l'homoscédasticité n'est pas valide, il y a une non-normalité et des valeurs extrêmes. Si nous voulons utiliser ce modèle il faudrait envisager une glm ou une modification des variables avec des fonctions tel que le logarithme et faire attention aux valeurs extrêmes.
--   Le modèle linéaire 2 possède un R² ajusté moyen qui explique 52 % de la variabilité du nombre de proies consommées. Les résidus de ce modèle ne varient pas trop des valeurs prédites, l'homoscédasticité est raisonnablement valide mais il y a une non-normalité et des valeurs extrêmes. Si nous voulons utiliser ce modèle il faudrait envisager une glm et faire attention aux valeurs extrêmes.
--   Le modèle otters_glm1 explique la variation du nombre d'oursins consommés par les variables tool_use (fréquence d'utilisation d'outils), length (longueur de la loutre) et ageclass (classe d'âge). Il y a surdispersion des résidus donc nous faisons un modèle quasi-poisson mais la surdispersion reste importante. Ce modèle ne peut donc pas être utilisé ainsi et étoffer le jeu de données pourrait être une piste d'avancement.
--   Le modèle otters_glm2 explique que les variables hardness(dureté de la proie), tool_use(fréquence d'utilisation d'outils) et l'age explique la variation de l'apport calorifique totale. Comme nous utilisons une glm la non-normalité des résidus n'affecte pas le modèle. Il faut faire attention aux valeurs extrêmes présentes.
+-   Le modèle linéaire 1 possède un R² ajusté de 0.8, il explique donc 80 % de la variation de la masse. Les résidus de ce modèle varient fort par rapport aux valeurs prédites, l'homoscédasticité n'est pas valide, il y a une non-normalité et des valeurs extrêmes. Si nous voulons utiliser ce modèle, il faudrait envisager une GLM ou une modification des variables avec des fonctions telles que le logarithme et faire attention aux valeurs extrêmes.
+-   Le modèle linéaire 2 possède un R² ajusté moyen, qui explique 52 % de la variabilité du nombre de proies consommées. Les résidus de ce modèle ne varient pas trop des valeurs prédites, l'homoscédasticité est raisonnablement valide, mais il y a une non-normalité et des valeurs extrêmes. Si nous voulons utiliser ce modèle, il faudrait envisager une GLM et faire attention aux valeurs extrêmes.
+-   Le modèle otters_glm1 explique la variation du nombre d'oursins consommés par les variables tool_use (fréquence d'utilisation d'outils), length (longueur de la loutre) et ageclass (classe d'âge). Il y a surdispersion des résidus, donc nous faisons un modèle quasi-poisson, mais la surdispersion reste importante. Ce modèle ne peut donc pas être utilisé ainsi et étoffer le jeu de données pourrait être une piste d'avancement.
+-   Le modèle otters_glm2 explique que les variables hardness (dureté de la proie), tool_use (fréquence d'utilisation d'outils) et l'âge explique la variation de l'apport calorifique total. Comme nous utilisons une GLM la non-normalité des résidus n'affecte pas le modèle. Il faut faire attention aux valeurs extrêmes présentes.
 
 <!--% N'indiquez rien ci-dessous. Quarto se chargera de rajouter vos références bibliographiques automatiquement. -->
