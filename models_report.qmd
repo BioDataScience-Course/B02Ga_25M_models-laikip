@@ -43,6 +43,9 @@ Les analyses sont réalisées dans `r R.version.string` et plus précisément en
 ### Modèle 1 : modèle linéaire
 
 ```{r modele1}
+# Configuration de l'environnement et Lecture des données
+SciViews::R("model", "infer") 
+otters_tool <- read("data/otters_tool.rds")
 otters_lm3 <- lm(data = otters_tool, mass ~ length * dietT, subset = length >= 80)
 summary(otters_lm3) |> tabularise()
 
